@@ -1,5 +1,5 @@
 html {
-    font-family: Helvetica, sans-serif;
+    font-family: 'Ubuntu', Helvetica, sans-serif;
 }
 
 body {
@@ -13,16 +13,12 @@ header {
     flex-wrap: wrap;
     background-color: #293B5F;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 header h1 {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
-    justify-self: right;
-    font-family: 'Ubuntu', sans-serif;
     font-size: 45px;
+    font-family: 'Montserrat', sans-serif;
 }
 
 footer {
@@ -33,7 +29,7 @@ footer {
     background-color: #293B5F;
 }
 
-footer h3 {
+footer h4 {
     color: white;
 }
 
@@ -67,8 +63,11 @@ nav ul li {
     font-size: 14px;
 }
 
-nav ul li a {
+a {
     text-decoration: none;
+}
+
+nav ul li a {
     padding: 20px 0px;
 }
 
@@ -84,17 +83,53 @@ nav ul li a:link,
 
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #about-me {
-    width: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0px 10px 5px 10px;
+    background-image: linear-gradient(#191919, #293B5F, #385183);
 }
 
+#about-me img {
+    width: 150px;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+#about-me p {
+    flex: 1;
+    font-size: 18px;
+    margin-right: 10%;
+    margin-left: 10px;
+    color: #F0F0F0;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.circular-border {
+    border-radius: 50%;
+}
+
+
 #feature-project {
-    width: 35%;
-    border-left: 1px solid black;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 5px 10px;
+}
+
+#feature-project h2 {
+    padding: 0;
+    margin: 10px 0px;
+}
+
+#feature-project img {
+    margin-bottom: 10px;
 }
 
 .nav-button:hover {
@@ -105,6 +140,11 @@ main {
 .nav-img:hover {
     height: 36px;
     width: 36px;
+}
+
+.no-spaces {
+    margin: 0;
+    padding: 0;
 }
 
 @media screen and (max-width: 700px) {
@@ -120,7 +160,29 @@ main {
         flex-direction: column;
     }
 
-    #about-me, #feature-project {
-        width: 100%;
+    #feature-project {
+        justify-content: center;
+        align-items: center;
     }
+
+    #feature-project img {
+        width: 400px;
+    }
+
+    #about-me {
+        flex-direction: column;
+    }
+
+    #about-me img {
+        width: 300px;
+        margin-left: 10px;
+    }
+
+    #about-me p {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
 }
