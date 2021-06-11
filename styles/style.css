@@ -1,3 +1,4 @@
+/* Global */
 html {
     font-family: 'Ubuntu', Helvetica, sans-serif;
 }
@@ -7,6 +8,16 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
+.no-spaces {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header  */
 header {
     display: flex;
     flex-direction: row;
@@ -22,6 +33,7 @@ header h1 {
     color: white;
 }
 
+/* Footer */
 footer {
     display: flex;
     justify-content: center;
@@ -34,6 +46,7 @@ footer h5 {
     color: white;
 }
 
+/* Nav bar */
 nav {
     display: flex;
     flex-direction: row;
@@ -46,7 +59,7 @@ nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: start;
     flex-wrap: wrap;
     padding-left: 0px;
     margin: 0;
@@ -54,14 +67,10 @@ nav ul {
 
 nav ul li {
     list-style-type: none;
-    padding: 20px 10px;
+    padding: 20px 5px;
     margin-left: 0px;
     text-transform: uppercase;
     font-size: 14px;
-}
-
-a {
-    text-decoration: none;
 }
 
 nav ul li a {
@@ -74,6 +83,44 @@ nav ul li a:link,
     color: white;
 }
 
+nav ul + ul li {
+    text-align: right;
+}
+
+#home-li {
+    width: 40px;
+}
+
+#projects-li{ 
+    width: 70px;
+}
+
+#hobbies-li {
+    width: 110px;
+}
+
+#contact-li{
+    width: 90px;
+}
+
+.nav-button:hover {
+    font-weight: 900;
+    padding-left: 0px;
+    padding-right: 0px;
+    color: black;
+}
+
+.nav-img {
+    padding: 4px;
+}
+
+.nav-img:hover {
+    height: 32px;
+    width: 32px;
+    padding: 0;
+}
+
+/* Main */
 #socials-header {
     font-weight: 900;
 }
@@ -129,21 +176,7 @@ main {
     margin-bottom: 10px;
 }
 
-.nav-button:hover {
-    font-weight: 900;
-    font-size: 20px;
-}
-
-.nav-img:hover {
-    height: 36px;
-    width: 36px;
-}
-
-.no-spaces {
-    margin: 0;
-    padding: 0;
-}
-
+/* Settings for mobile */
 @media screen and (max-width: 700px) {
     nav {
         flex-direction: column;
