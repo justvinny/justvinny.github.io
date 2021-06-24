@@ -1,10 +1,8 @@
 import { makeStyles, Typography, Link, Avatar, Card } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
 import Socials from "../Components/Menu/Socials";
 
 const Home = ({ responsiveMenuQuery }) => {
     // Styles
-    const theme = useTheme();
     const styles = makeStyles(theme => ({
         home: {
             display: "flex",
