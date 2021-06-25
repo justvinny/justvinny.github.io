@@ -36,6 +36,7 @@ const ProjectCard = ({ projects }) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            padding: 10,
             [theme.breakpoints.up("md")]: {
                 marginLeft: "10vw",
                 marginRight: "10vw"
@@ -43,7 +44,11 @@ const ProjectCard = ({ projects }) => {
         },
         cardImg: {
             margin: 0,
-            padding: 0
+            padding: 0,
+            [theme.breakpoints.up("md")]: {
+                marginLeft: 10,
+                marginRight: 10
+            }
         }
     }));
 
