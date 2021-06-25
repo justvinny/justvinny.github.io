@@ -1,9 +1,9 @@
-import {  makeStyles, Box, Typography, Button, IconButton, Toolbar, AppBar } from "@material-ui/core";
+import { makeStyles, Box, Typography, Button, IconButton, Toolbar, AppBar } from "@material-ui/core";
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
 
-const TopMenuBar = ({ responsiveMenuQuery }) => {
+const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     // Styles
     const styles = makeStyles({
         root: {
@@ -47,14 +47,28 @@ const TopMenuBar = ({ responsiveMenuQuery }) => {
         }
     }
 
+    const drawHeader = () => {
+        if (responsiveHeaderQuery) {
+            return (
+                <Typography variant="h4" className={classes.headerName}>
+                    PORTFOLIO
+                </Typography>
+            )
+        } else {
+            return (
+                <Typography variant="h5" className={classes.headerName}>
+                    PORTFOLIO
+                </Typography>
+            )
+        }
+    }
+
     return (
         <>
             <AppBar position="sticky">
                 <Toolbar className={classes.root}>
                     {drawToolBar()}
-                    <Typography variant="h4" className={classes.headerName}>
-                        PORTFOLIO
-                    </Typography>
+                    {drawHeader()}
                 </Toolbar>
             </AppBar>
             <DrawerMenu showDrawer={showDrawer} toggleDrawer={toggleDrawer} />

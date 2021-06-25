@@ -32,10 +32,11 @@ const App = () => {
   const classes = styles();
 
   const responsiveMenuQuery = useMediaQuery("(min-width:800px)");
+  const responsiveHeaderQuery = useMediaQuery("(min-width:600px)");
 
   return (
     <>
-      <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} />
+      <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} responsiveHeaderQuery={responsiveHeaderQuery} />
       <main>
         <Home/>
       </main>
