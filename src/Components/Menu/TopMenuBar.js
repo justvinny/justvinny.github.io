@@ -14,6 +14,9 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         headerName: {
             fontFamily: "Impact",
             letterSpacing: 2
+        },
+        appBarColor: {
+            backgroundColor: "#1e1f22"
         }
     });
     const classes = styles();
@@ -64,15 +67,15 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     }
 
     return (
-        <>
-            <AppBar position="sticky">
+        <div>
+            <AppBar position="sticky" className={classes.appBarColor}>
                 <Toolbar className={classes.root}>
                     {drawToolBar()}
                     {drawHeader()}
                 </Toolbar>
             </AppBar>
             <DrawerMenu showDrawer={showDrawer} toggleDrawer={toggleDrawer} />
-        </>
+        </div>
     )
 };
 

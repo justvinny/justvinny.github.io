@@ -1,6 +1,6 @@
 import React from "react";
 import TopMenuBar from "./Components/Menu/TopMenuBar";
-import { Typography, makeStyles, useMediaQuery } from "@material-ui/core";
+import { Typography, makeStyles, useMediaQuery} from "@material-ui/core";
 import Home from "./Pages/Home";
 
 const App = () => {
@@ -36,20 +36,22 @@ const App = () => {
 
   return (
     <>
-      <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} responsiveHeaderQuery={responsiveHeaderQuery} />
-      <main>
-        <Home/>
-      </main>
-      <footer className={classes.footer}>
-        <Typography variant="overline">Powered by</Typography>
-        <div className={classes.poweredByImages}>
-          <img src="/images/GitHub-Mark-32px.png" alt="Github Logo" />
-          <img src="/images/js-logo.png" alt="Javascript Logo" />
-          <img src="/logo192.png" alt="React Logo" />
-          <img src="/images/material-ui-logo.png" alt="Material UI Logo" />
-        </div>
-        <Typography variant="overline">&copy; Copyright 2021 Vinson Beduya</Typography>
-      </footer>
+
+        <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} responsiveHeaderQuery={responsiveHeaderQuery} />
+        <main>
+          <Home />
+        </main>
+        <footer className={classes.footer}>
+          <Typography variant="overline">Powered by</Typography>
+          <div className={classes.poweredByImages}>
+            <img src="/images/GitHub-Mark-32px.png" alt="Github Logo" />
+            <img src="/images/js-logo.png" alt="Javascript Logo" />
+            <img src="/logo192.png" alt="React Logo" />
+            <img src="/images/material-ui-logo.png" alt="Material UI Logo" />
+          </div>
+          <Typography variant="overline">&copy; Copyright 2021 Vinson Beduya</Typography>
+        </footer>
+      {/* </MuiThemeProvider> */}
     </>
   );
 }

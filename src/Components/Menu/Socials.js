@@ -1,4 +1,4 @@
-import { Typography, Box } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import SocialLinks from "../SocialsLinks";
 
@@ -7,18 +7,19 @@ const Socials = () => {
         socials: {
             display: "flex",
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
         },
+        boldText: {
+            fontWeight: "900"
+        }
     });
     const classes = styles();
 
     return (
         <div className={classes.socials}>
-            <Box fontWeight="900">
-                <Typography>
+                <Typography className={classes.boldText}>
                     SOCIALS
                 </Typography>
-            </Box>
             <SocialLinks />
         </div>
     )

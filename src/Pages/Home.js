@@ -1,33 +1,25 @@
-import { makeStyles, Typography, Link, Avatar, Card} from "@material-ui/core";
+import { makeStyles, Typography, Avatar, Card } from "@material-ui/core";
 import Socials from "../Components/Menu/Socials";
+import ProjectCard from "../Components/ProjectCard";
 
 const Home = () => {
     // Styles
     const styles = makeStyles((theme) => ({
-        breakpoints: {
-            values: {
-                sm1 : 300
-            }
-        },
         home: {
             display: "flex",
-            flexDirection: "column",
-            [theme.breakpoints.up("md")]: {
-                flexDirection: "row"
-            }
+            flexDirection: "column"
         },
         aboutMe: {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            marginLeft: 10,
-            marginRight: 10,
-            marginTop: 10,
+            justifyContent: "center",
+            margin: 10,
             padding: 10,
             [theme.breakpoints.up("md")]: {
-                width: "30vw",
-                marginRight: 0,
-                marginBottom: 10
+                flexDirection: "row",
+                marginLeft: "10vw",
+                marginRight: "10vw"
             }
         },
         avatarSize: {
@@ -44,35 +36,82 @@ const Home = () => {
             marginBottom: 10,
         },
         featured: {
-            flex: 1,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
             margin: 10,
-            padding: 10
+            [theme.breakpoints.up("md")]: {
+                marginLeft: "10vw",
+                marginRight: "10vw"
+            }
+        },
+        featuredHeader: {
+            marginLeft: 10,
+            marginRight: 10,
+            paddingTop: 15,
+            paddingBottom: 15,
+            borderRadius: 0,
+            backgroundColor: "#1e1f22",
+            [theme.breakpoints.up("md")]: {
+                marginLeft: "10vw",
+                marginRight: "10vw"
+            }
+        },
+        featuredText: {
+            textAlign: "center",
+            marginLeft: 10,
+            marginRight: 10,
+            backgroundColor: "#1e1f22",
+            color: "#fff",
+            fontFamily: "Impact",
+            letterSpacing: 2,
+            [theme.breakpoints.up("md")]: {
+                marginLeft: "10vw",
+                marginRight: "10vw"
+            }
         }
     }));
     const classes = styles();
 
-    const project = {
-        title: "Basic 2D RPG Game",
-        image: "images/rpg-project-image.JPG",
-        iamgeAlt: "RPG Game Screenshot with character and golem sprite.",
-        link: "https://github.com/justvinny/rpg-game-pdc",
-        shortDescription: "Animated 2D RPG Game made in Java and Swing by a team of 3 people for our Program Design and "
-            + "Construction Paper.",
-        detailedDescription: [
-            "Simple map exploration with a 2D animated character",
-            "Classic turn based combat reminescent of old school J-RPGs.",
-            "Random monster encounters.",
-            "Treasure hunting.",
-            "Challenging(?) boss battle.",
-            "Inventory system where you can equip your character with items to make it stronger or heal up with",
-            "Event log for player interactions with different game objects such as treasures, battles, and bosses.",
-            "Map generated from ASCII text.",
-            "Camera view that centers on player."
-        ]
-    }
+    const projects = [
+        {
+            title: "Basic 2D RPG Game",
+            image: "images/rpg-project-image.JPG",
+            iamgeAlt: "RPG Game Screenshot with character and golem sprite.",
+            link: "https://github.com/justvinny/rpg-game-pdc",
+            shortDescription: "Animated 2D RPG Game made in Java and Swing by a team of 3 people for our Program Design and "
+                + "Construction Paper.",
+            detailedDescription: [
+                "Simple map exploration with a 2D animated character",
+                "Classic turn based combat reminescent of old school J-RPGs.",
+                "Random monster encounters.",
+                "Treasure hunting.",
+                "Challenging(?) boss battle.",
+                "Inventory system where you can equip your character with items to make it stronger or heal up with",
+                "Event log for player interactions with different game objects such as treasures, battles, and bosses.",
+                "Map generated from ASCII text.",
+                "Camera view that centers on player."
+            ]
+        },
+        {
+            title: "Password Manager (Android)",
+            image: "images/password-manager-screens-p1.png",
+            iamgeAlt: "Password Manager Android Application Screenshot",
+            link: "https://github.com/justvinny/pass-vault-java-android",
+            shortDescription: "Native android password manager application to manage all my passwords. No more getting locked out by Study Link!",
+            detailedDescription: [
+                "Store accounts to persistent storage.",
+                "View accounts stored and copy password to clipboard.",
+                "Delete accounts from persistent storage.",
+                "Random password generator.",
+                "Username search feature.",
+                "Account sorting feature.",
+                "Import/Export CSV feature.",
+                "Create passcode and login feature using SharedPreferences."
+            ]
+        }
+    ];
 
     const aboutMe = {
         name: "Vinson",
@@ -96,17 +135,10 @@ const Home = () => {
                     {aboutMe.summary}
                 </Typography>
             </Card>
-            <Card className={classes.featured} elevation={5}>
-                <Typography variant="h5">Featured Project</Typography>
-                <img src={project.image} id={"project-img"} className={classes.photoSize} alt={project.imageAlt} />
-                <Typography variant="h6">{project.title}</Typography>
-                <Typography variant="body2"><Link href={project.link} target="_blank" rel="noopener">Github Source
-                    Code</Link></Typography>
-                <Typography variant="body2" paragraph>{project.shortDescription}</Typography>
-                <ul>
-                    {project.detailedDescription.map(line => <li key={line}><Typography variant="body2">{line}</Typography></li>)}
-                </ul>
+            <Card className={classes.featuredHeader} elevation={5}>
+                <Typography variant="h5" className={classes.featuredText}>FEATURED PROJECTS</Typography>
             </Card>
+            <ProjectCard projects={projects} />
         </div>
     )
 }

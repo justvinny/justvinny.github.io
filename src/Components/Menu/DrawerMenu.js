@@ -12,6 +12,9 @@ const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
         },
         listItemSocials: {
             textAlign: "center"
+        },
+        topMargin: {
+            marginTop: 10
         }
     });
     const classes = styles();
@@ -19,7 +22,7 @@ const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
     return (
         <Drawer anchor="right" open={showDrawer} onClose={toggleDrawer} >
             <List className={classes.list} >
-                <Divider />
+                <Divider className={classes.marginTop} />
                 <ListItem button>
                     <ListItemText className={classes.listItem} primary={"HOME"}></ListItemText>
                 </ListItem>
