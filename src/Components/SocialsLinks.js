@@ -14,23 +14,38 @@ const SocialLinks = () => {
     });
     const classes = styles();
 
+    const socials = [
+        {
+            name: "Github",
+            link: "https://github.com/justvinny",
+            image: "/images/GitHub-Mark-32px.png",
+            imageAlt: "Github Logo"
+        },
+        {
+            name: "Instagram",
+            link: "https://www.instagram.com/vinson.beduya/",
+            image: "/images/Instagram_AppIcon_Aug2017.png",
+            imageAlt: "Instagram Logo"
+        },
+        {
+            name: "LinkedIn",
+            link: "https://www.linkedin.com/in/vinson-beduya/",
+            image: "/images/LI-In-Bug.png",
+            imageAlt: "LinkedIn Logo"
+        }
+    ]
+
     return (
         <div className={classes.imageContainer}>
-            <Link href="https://github.com/justvinny" target="_blank" rel="noopener">
-                <IconButton>
-                    <img className={classes.imageLink} src="/images/GitHub-Mark-32px.png" alt="Github Logo" />
-                </IconButton>
-            </Link>
-            <Link href="https://www.instagram.com/vinson.beduya/" target="_blank" rel="noopener">
-                <IconButton>
-                    <img className={classes.imageLink} src="/images/Instagram_AppIcon_Aug2017.png" alt="Instagrama Logo" />
-                </IconButton>
-            </Link>
-            <Link href="https://www.linkedin.com/in/vinson-beduya/" target="_blank" rel="noopener">
-                <IconButton>
-                    <img className={classes.imageLink} src="/images/LI-In-Bug.png" alt="Linked-In Logo" />
-                </IconButton>
-            </Link>
+            {socials.map(social => {
+                return (
+                    <Link href={social.link} target="_blank" rel="noopener" key={social.name}>
+                        <IconButton>
+                            <img className={classes.imageLink} src={social.image} alt={social.imageAlt} />
+                        </IconButton>
+                    </Link>
+                )
+            })}
         </div>
     )
 }

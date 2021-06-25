@@ -14,9 +14,11 @@ const Socials = () => {
 
     return (
         <div className={classes.socials}>
-            <Typography>
-                <Box fontWeight="900">SOCIALS</Box>
-            </Typography>
+            <Box fontWeight="900">
+                <Typography>
+                    SOCIALS
+                </Typography>
+            </Box>
             <SocialLinks />
         </div>
     )
