@@ -16,3 +16,10 @@ code {
 .Footer {
   background-color: black;
 }
+
+@media screen and (max-width: 600px) {
+  img#project-img {
+    width: 325px;
+    height: 240px;
+  }
+}

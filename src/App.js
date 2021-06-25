@@ -37,12 +37,12 @@ const App = () => {
     <>
       <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} />
       <main>
-        <Home responsiveMenuQuery={responsiveMenuQuery} />
+        <Home/>
       </main>
       <footer className={classes.footer}>
         <Typography variant="overline">Powered by</Typography>
         <div className={classes.poweredByImages}>
-          <img src="/images/GitHub-Mark-32px.png" alt="Github Logo"/>
+          <img src="/images/GitHub-Mark-32px.png" alt="Github Logo" />
           <img src="/images/js-logo.png" alt="Javascript Logo" />
           <img src="/logo192.png" alt="React Logo" />
           <img src="/images/material-ui-logo.png" alt="Material UI Logo" />

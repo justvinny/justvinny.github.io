@@ -1,9 +1,14 @@
-import { makeStyles, Typography, Link, Avatar, Card } from "@material-ui/core";
+import { makeStyles, Typography, Link, Avatar, Card} from "@material-ui/core";
 import Socials from "../Components/Menu/Socials";
 
-const Home = ({ responsiveMenuQuery }) => {
+const Home = () => {
     // Styles
-    const styles = makeStyles(theme => ({
+    const styles = makeStyles((theme) => ({
+        breakpoints: {
+            values: {
+                sm1 : 300
+            }
+        },
         home: {
             display: "flex",
             flexDirection: "column",
@@ -25,11 +30,18 @@ const Home = ({ responsiveMenuQuery }) => {
                 marginBottom: 10
             }
         },
-        photoSize: {
+        avatarSize: {
             width: 250,
             height: 250,
             marginRight: 10,
-            marginBottom: 10
+            marginBottom: 10,
+
+        },
+        photoSize: {
+            width: 500,
+            height: 350,
+            marginRight: 10,
+            marginBottom: 10,
         },
         featured: {
             flex: 1,
@@ -77,7 +89,7 @@ const Home = ({ responsiveMenuQuery }) => {
         <div className={classes.home}>
             <Card className={classes.aboutMe} elevation={5}>
                 <div>
-                    <Avatar src={aboutMe.avatar} alt={aboutMe.avatarAlt} className={classes.photoSize} />
+                    <Avatar src={aboutMe.avatar} alt={aboutMe.avatarAlt} className={classes.avatarSize} />
                     <Socials />
                 </div>
                 <Typography variant="body2">
@@ -86,7 +98,7 @@ const Home = ({ responsiveMenuQuery }) => {
             </Card>
             <Card className={classes.featured} elevation={5}>
                 <Typography variant="h5">Featured Project</Typography>
-                <img src={project.image} width={500} alt={project.imageAlt} />
+                <img src={project.image} id={"project-img"} className={classes.photoSize} alt={project.imageAlt} />
                 <Typography variant="h6">{project.title}</Typography>
                 <Typography variant="body2"><Link href={project.link} target="_blank" rel="noopener">Github Source
                     Code</Link></Typography>
