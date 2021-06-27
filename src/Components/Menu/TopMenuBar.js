@@ -2,6 +2,7 @@ import { makeStyles, Box, Typography, Button, IconButton, Toolbar, AppBar } from
 import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
+import { Link } from "react-router-dom";
 
 const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     // Styles
@@ -21,7 +22,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         },
         appBarColor: {
             backgroundColor: "#1e1f22"
-        }, 
+        },
         menuText: {
             [theme.breakpoints.up("xl")]: {
                 fontSize: ".8vw",
@@ -49,9 +50,9 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         if (responsiveMenuQuery) {
             return (
                 <div>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Contact Me</Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Projects</Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Home</Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/contact-me">Contact Me</Link></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects">Projects</Link></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/">Home</Link></Box></Button>
                     {menuIcon()}
                 </div>
             )

@@ -1,8 +1,10 @@
 import React from "react";
 import TopMenuBar from "./Components/Menu/TopMenuBar";
-import { Typography, makeStyles, useMediaQuery} from "@material-ui/core";
+import { Typography, makeStyles, useMediaQuery } from "@material-ui/core";
 import Home from "./Pages/Home";
-
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Projects from "./Pages/Projects";
+import ContactMe from "./Pages/ContactMe";
 const App = () => {
   // Styles 
   const styles = makeStyles({
@@ -36,10 +38,21 @@ const App = () => {
 
   return (
     <>
-
+      <Router>
         <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} responsiveHeaderQuery={responsiveHeaderQuery} />
+
         <main>
-          <Home />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/projects">
+              <Projects />
+            </Route>
+            <Route exact path="/contact-me">
+              <ContactMe/>
+            </Route>
+          </Switch>
         </main>
         <footer className={classes.footer}>
           <Typography variant="overline">Powered by</Typography>
@@ -51,7 +64,7 @@ const App = () => {
           </div>
           <Typography variant="overline">&copy; Copyright 2021 Vinson Beduya</Typography>
         </footer>
-      {/* </MuiThemeProvider> */}
+      </Router>
     </>
   );
 }

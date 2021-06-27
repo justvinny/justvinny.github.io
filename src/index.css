@@ -15,3 +15,21 @@ code {
 .Footer {
   background-color: black;
 }
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+}
+a:hover {
+  border-bottom: 1px solid white;
+}
+
+a.DrawerLink:link, a.DrawerLink:visited {
+  color: black;
+  margin-left: 5px;
+  font-size: 20px;  
+  padding-right: 80px;
+}
