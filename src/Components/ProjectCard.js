@@ -14,6 +14,8 @@ const ProjectCard = ({ projects }) => {
             [theme.breakpoints.up("md")]: {
                 marginLeft: "10vw",
                 marginRight: "10vw",
+            },
+            [theme.breakpoints.up("lg")]: {
                 flexDirection: "row"
             }
         }, 
@@ -28,6 +30,8 @@ const ProjectCard = ({ projects }) => {
             [theme.breakpoints.up("md")]: {
                 marginLeft: "10vw",
                 marginRight: "10vw",
+            },
+            [theme.breakpoints.up("lg")]: {
                 flexDirection: "row-reverse"
             }
         },
@@ -48,6 +52,22 @@ const ProjectCard = ({ projects }) => {
             [theme.breakpoints.up("md")]: {
                 marginLeft: 10,
                 marginRight: 10
+            },
+            [theme.breakpoints.up("lg")]: {
+                width: 450
+            },
+            [theme.breakpoints.up("xl")]: {
+                width: "35vw"
+            }
+        },
+        bodyText: {
+            [theme.breakpoints.up("xl")]: {
+                fontSize: "1vw"
+            }
+        },
+        boldText: {
+            [theme.breakpoints.up("xl")]: {
+                fontWeight: 900
             }
         }
     }));
@@ -57,19 +77,19 @@ const ProjectCard = ({ projects }) => {
     return projects.map(project => {
         alternateFlex = !alternateFlex;
         return (
-            <Card key={project.title} className={alternateFlex ? classes.featured : classes.featuredAlt} elevation={5}>
+            <Card key={project.title} className={`${alternateFlex ? classes.featured : classes.featuredAlt} landscapeView`} elevation={5}>
                 <CardMedia
                     component="img"
                     image={project.image}
                     alt={project.imageAlt}
                     className={classes.cardImg} />
                 <div className={classes.featuredBody}>
-                    <Typography variant="h6">{project.title}</Typography>
-                    <Typography variant="body2"><Link href={project.link} target="_blank" rel="noopener">Github Source
+                    <Typography variant="h6" className={`${classes.bodyText} ${classes.boldText}`}>{project.title}</Typography>
+                    <Typography variant="body2" className={classes.bodyText}><Link href={project.link} target="_blank" rel="noopener">Github Source
                         Code</Link></Typography>
-                    <Typography variant="body2" paragraph>{project.shortDescription}</Typography>
+                    <Typography variant="body2" paragraph className={classes.bodyText}>{project.shortDescription}</Typography>
                     <ul>
-                        {project.detailedDescription.map(line => <li key={line}><Typography variant="body2">{line}</Typography></li>)}
+                        {project.detailedDescription.map(line => <li key={line}><Typography variant="body2" className={classes.bodyText}>{line}</Typography></li>)}
                     </ul>
                 </div>
             </Card>

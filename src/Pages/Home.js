@@ -27,7 +27,10 @@ const Home = () => {
             height: 250,
             marginRight: 10,
             marginBottom: 10,
-
+            [theme.breakpoints.up("xl")]: {
+                width: "15vw",
+                height: "15vw"
+            }
         },
         photoSize: {
             width: 500,
@@ -69,6 +72,13 @@ const Home = () => {
             [theme.breakpoints.up("md")]: {
                 marginLeft: "10vw",
                 marginRight: "10vw"
+            },
+            [theme.breakpoints.up("xl")]: {
+                fontSize: "1.5vw"
+            }
+        }, aboutMeText: {
+            [theme.breakpoints.up("xl")]: {
+                fontSize: "1.0vw"
             }
         }
     }));
@@ -131,7 +141,7 @@ const Home = () => {
                     <Avatar src={aboutMe.avatar} alt={aboutMe.avatarAlt} className={classes.avatarSize} />
                     <Socials />
                 </div>
-                <Typography variant="body2">
+                <Typography variant="body2" className={classes.aboutMeText} >
                     {aboutMe.summary}
                 </Typography>
             </Card>

@@ -5,7 +5,7 @@ import DrawerMenu from "./DrawerMenu";
 
 const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     // Styles
-    const styles = makeStyles({
+    const styles = makeStyles(theme => ({
         root: {
             display: "flex",
             justifyContent: "space-between",
@@ -13,12 +13,22 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         },
         headerName: {
             fontFamily: "Impact",
-            letterSpacing: 2
+            letterSpacing: 2,
+            [theme.breakpoints.up("xl")]: {
+                fontSize: "1.5vw",
+                fontWeight: 900
+            }
         },
         appBarColor: {
             backgroundColor: "#1e1f22"
+        }, 
+        menuText: {
+            [theme.breakpoints.up("xl")]: {
+                fontSize: ".8vw",
+                fontWeight: "bold"
+            }
         }
-    });
+    }));
     const classes = styles();
 
     // State
@@ -39,9 +49,9 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         if (responsiveMenuQuery) {
             return (
                 <div>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold">Contact Me</Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold">Projects</Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold">Home</Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Contact Me</Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Projects</Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}>Home</Box></Button>
                     {menuIcon()}
                 </div>
             )
