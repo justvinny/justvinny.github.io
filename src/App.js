@@ -3,7 +3,7 @@ import TopMenuBar from "./Components/Menu/TopMenuBar";
 import { Typography, makeStyles, useMediaQuery, Link } from "@material-ui/core";
 import { Email, LinkedIn, Instagram } from "@material-ui/icons";
 import Home from "./Pages/Home";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Projects from "./Pages/Projects";
 import ContactMe from "./Pages/ContactMe";
 const App = () => {
