@@ -20,8 +20,9 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
                 fontWeight: 900
             }
         },
-        appBarColor: {
-            backgroundColor: "#1e1f22"
+        appBar: {
+            backgroundColor: "#1e1f22",
+            position: "sticky"
         },
         menuText: {
             [theme.breakpoints.up("xl")]: {
@@ -50,9 +51,9 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         if (responsiveMenuQuery) {
             return (
                 <div>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/contact-me">Contact Me</Link></Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects">Projects</Link></Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/">Home</Link></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/" className="MenuItem">Home</Link></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects" className="MenuItem">Projects</Link></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><a href="#Footer" className="MenuItem">Contact Me</a></Box></Button>
                     {menuIcon()}
                 </div>
             )
@@ -79,7 +80,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
 
     return (
         <div>
-            <AppBar position="sticky" className={classes.appBarColor}>
+            <AppBar position="sticky" className={classes.appBar}>
                 <Toolbar className={classes.root}>
                     {drawToolBar()}
                     {drawHeader()}

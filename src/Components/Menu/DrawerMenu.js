@@ -1,4 +1,4 @@
-import { makeStyles, Drawer, Divider, List, ListItem, ListItemText } from "@material-ui/core";
+import { makeStyles, Drawer, Divider, List, ListItem } from "@material-ui/core";
 import Socials from "./Socials";
 import {Link} from "react-router-dom";
 
@@ -30,8 +30,8 @@ const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
                 <ListItem button>
                     <Link to="/projects" className="DrawerLink">Projects</Link>
                 </ListItem>
-                <ListItem button>
-                    <Link to="/contact-me" className="DrawerLink">Contact Me</Link>
+                <ListItem button onClick={toggleDrawer}>
+                    <a href="#Footer" className="DrawerLink">Contact Me</a>
                 </ListItem>
                 <Divider />
                 <Socials />

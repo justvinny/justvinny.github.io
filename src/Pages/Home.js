@@ -1,6 +1,7 @@
 import { makeStyles, Typography, Avatar, Card } from "@material-ui/core";
 import Socials from "../Components/Menu/Socials";
 import ProjectCard from "../Components/ProjectCard";
+import {featuredProjects} from "../Components/Projects/ProjectData";
 
 const Home = () => {
     // Styles
@@ -84,45 +85,6 @@ const Home = () => {
     }));
     const classes = styles();
 
-    const projects = [
-        {
-            title: "Basic 2D RPG Game",
-            image: "images/rpg-project-image.JPG",
-            iamgeAlt: "RPG Game Screenshot with character and golem sprite.",
-            link: "https://github.com/justvinny/rpg-game-pdc",
-            shortDescription: "Animated 2D RPG Game made in Java and Swing by a team of 3 people for our Program Design and "
-                + "Construction Paper.",
-            detailedDescription: [
-                "Simple map exploration with a 2D animated character",
-                "Classic turn based combat reminescent of old school J-RPGs.",
-                "Random monster encounters.",
-                "Treasure hunting.",
-                "Challenging(?) boss battle.",
-                "Inventory system where you can equip your character with items to make it stronger or heal up with",
-                "Event log for player interactions with different game objects such as treasures, battles, and bosses.",
-                "Map generated from ASCII text.",
-                "Camera view that centers on player."
-            ]
-        },
-        {
-            title: "Password Manager (Android)",
-            image: "images/password-manager-screens-p1.png",
-            iamgeAlt: "Password Manager Android Application Screenshot",
-            link: "https://github.com/justvinny/pass-vault-java-android",
-            shortDescription: "Native android password manager application to manage all my passwords. No more getting locked out by Study Link!",
-            detailedDescription: [
-                "Store accounts to persistent storage.",
-                "View accounts stored and copy password to clipboard.",
-                "Delete accounts from persistent storage.",
-                "Random password generator.",
-                "Username search feature.",
-                "Account sorting feature.",
-                "Import/Export CSV feature.",
-                "Create passcode and login feature using SharedPreferences."
-            ]
-        }
-    ];
-
     const aboutMe = {
         name: "Vinson",
         avatar: "images/profile-pic.jpg",
@@ -130,7 +92,8 @@ const Home = () => {
         summary: `Kia ora! I'm Vinson, a university student studying Computer Science and Software Development at
         the Auckland University of Technology. I am particulary interested in either creating software
         that is helpful to my daily life or making games that I find interesting. On my off days, if you
-        don't find me having a barbie with my mates or lifting iron in the gym, I'm most likely either`
+        don't find me having a barbie with my mates or lifting iron in the gym, I'm most likely either making my
+        dream game project or upskilling my programming skills.`
     }
 
 
@@ -148,7 +111,7 @@ const Home = () => {
             <Card className={classes.featuredHeader} elevation={5}>
                 <Typography variant="h5" className={classes.featuredText}>FEATURED PROJECTS</Typography>
             </Card>
-            <ProjectCard projects={projects} />
+            <ProjectCard projects={featuredProjects} />
         </div>
     )
 }
