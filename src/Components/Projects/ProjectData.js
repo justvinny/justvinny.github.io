@@ -2,7 +2,7 @@ const projectData = [
     {
         isFeatured: false,
         title: "This Website",
-        image: "images/website-screen.jpg",
+        image: "images/website-screen.JPG",
         iamgeAlt: "Screenshot of this portfolio website.",
         link: "https://github.com/justvinny/justvinny.github.io",
         shortDescription: "Simple SPA portfolio website that uses HTML, CSS, Javascript, React, React Router, Material UI, and GitHub Pages.",
@@ -56,8 +56,8 @@ const projectData = [
     {
         isFeatured: false,
         title: "Life Manager",
-        image: "images/life-manager-screen.png",
-        iamgeAlt: "Password Manager Android Application Screenshot",
+        image: "images/life-manager-screen.PNG",
+        iamgeAlt: "Life Manager Application Screenshot",
         link: "https://github.com/justvinny/life-manager-app/tree/main",
         shortDescription: "Journal entry and weekly scheduler Desktop application made in Java and Swing where you can either write about your day or schedule events that will happen for that week. This application was made for a School Project where we were free to write any program we wish as long as we demonstrate our knowledge of OOP and core Java.",
         detailedDescription: [
@@ -70,7 +70,7 @@ const projectData = [
         isFeatured: false,
         title: "Pass Volt",
         image: "images/tk-pass-volt-screen.png",
-        iamgeAlt: "Password Manager Android Application Screenshot",
+        iamgeAlt: "Pass Volt Application Screenshot",
         link: "https://github.com/justvinny/tk_PassVolt",
         shortDescription: "This marks the start of my programming journey in 2019 where I made my very first destop GUI applicating using Python and Tkinter after self-teaching myself programming the past few months at the time.",
         detailedDescription: [
