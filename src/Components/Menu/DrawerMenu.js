@@ -1,6 +1,7 @@
 import { makeStyles, Drawer, Divider, List, ListItem } from "@material-ui/core";
 import Socials from "./Socials";
 import {Link} from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
     // Styles
@@ -24,14 +25,14 @@ const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
         <Drawer anchor="right" open={showDrawer} onClose={toggleDrawer} >
             <List className={classes.list} >
                 <Divider className={classes.marginTop} />
-                <ListItem button>
+                <ListItem button onClick={toggleDrawer}>
                     <Link to="/" className="DrawerLink">Home</Link>
                 </ListItem>
-                <ListItem button>
+                <ListItem button onClick={toggleDrawer}>
                     <Link to="/projects" className="DrawerLink">Projects</Link>
                 </ListItem>
                 <ListItem button onClick={toggleDrawer}>
-                    <a href="#Footer" className="DrawerLink">Contact Me</a>
+                    <HashLink to="#Footer" className="DrawerLink">Contact Me</HashLink>
                 </ListItem>
                 <Divider />
                 <Socials />

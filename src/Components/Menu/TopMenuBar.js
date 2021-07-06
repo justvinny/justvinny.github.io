@@ -3,6 +3,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     // Styles
@@ -53,7 +54,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
                 <div>
                     <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/" className="MenuItem">Home</Link></Box></Button>
                     <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects" className="MenuItem">Projects</Link></Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><a href="#Footer" className="MenuItem">Contact Me</a></Box></Button>
+                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><HashLink to="#Footer" className="MenuItem">Contact Me</HashLink></Box></Button>
                     {menuIcon()}
                 </div>
             )
