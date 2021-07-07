@@ -3,7 +3,7 @@ import Socials from "./Socials";
 import {Link} from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 
-const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
+const DrawerMenu = ({ showDrawer, toggleDrawer, scrollToTop }) => {
     // Styles
     const styles = makeStyles({
         list: {
@@ -20,15 +20,19 @@ const DrawerMenu = ({ showDrawer, toggleDrawer }) => {
         }
     });
     const classes = styles();
+    const toggleAndScrollToTop = () => {
+        scrollToTop();
+        toggleDrawer();
+    }
 
     return (
         <Drawer anchor="right" open={showDrawer} onClose={toggleDrawer} >
             <List className={classes.list} >
                 <Divider className={classes.marginTop} />
-                <ListItem button onClick={toggleDrawer}>
+                <ListItem button onClick={toggleAndScrollToTop}>
                     <Link to="/" className="DrawerLink">Home</Link>
                 </ListItem>
-                <ListItem button onClick={toggleDrawer}>
+                <ListItem button onClick={toggleAndScrollToTop}>
                     <Link to="/projects" className="DrawerLink">Projects</Link>
                 </ListItem>
                 <ListItem button onClick={toggleDrawer}>

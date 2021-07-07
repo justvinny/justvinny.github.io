@@ -96,7 +96,6 @@ const Home = () => {
         dream game project or upskilling my programming skills.`
     }
 
-
     return (
         <div className={classes.home}>
             <Card className={classes.aboutMe} elevation={5}>

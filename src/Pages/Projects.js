@@ -10,7 +10,6 @@ const Projects = () => {
     });
 
     const classes = styles();
-
     return (
         <div className={classes.root}>
             <ProjectCard projects={projectData} />

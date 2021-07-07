@@ -40,6 +40,8 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     // Helper functions
     const toggleDrawer = () => setShowDrawer(!showDrawer);
 
+    const scrollToTop = () => window.scrollTo(0, 0);
+
     const drawToolBar = () => {
         const menuIcon = () => {
             return (
@@ -52,8 +54,8 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
         if (responsiveMenuQuery) {
             return (
                 <div>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/" className="MenuItem">Home</Link></Box></Button>
-                    <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects" className="MenuItem">Projects</Link></Box></Button>
+                    <Button color="inherit" onClick={scrollToTop}><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/" className="MenuItem">Home</Link></Box></Button>
+                    <Button color="inherit" onClick={scrollToTop}><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects" className="MenuItem">Projects</Link></Box></Button>
                     <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><HashLink to="#Footer" className="MenuItem">Contact Me</HashLink></Box></Button>
                     {menuIcon()}
                 </div>
@@ -87,7 +89,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
                     {drawHeader()}
                 </Toolbar>
             </AppBar>
-            <DrawerMenu showDrawer={showDrawer} toggleDrawer={toggleDrawer} />
+            <DrawerMenu showDrawer={showDrawer} toggleDrawer={toggleDrawer} scrollToTop={scrollToTop} />
         </>
     )
 };
