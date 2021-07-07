@@ -80,7 +80,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
     }
 
     return (
-        <div>
+        <>
             <AppBar position="sticky" className={classes.appBar}>
                 <Toolbar className={classes.root}>
                     {drawToolBar()}
@@ -88,7 +88,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
                 </Toolbar>
             </AppBar>
             <DrawerMenu showDrawer={showDrawer} toggleDrawer={toggleDrawer} />
-        </div>
+        </>
     )
 };
 

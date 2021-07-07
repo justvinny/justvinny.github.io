@@ -63,7 +63,6 @@ const App = () => {
     <>
       <Router>
         <TopMenuBar responsiveMenuQuery={responsiveMenuQuery} responsiveHeaderQuery={responsiveHeaderQuery} />
-
         <main>
           <Switch>
             <Route exact path="/">
