@@ -1,4 +1,5 @@
 import { makeStyles, Card, CardMedia, Typography, Link } from "@material-ui/core";
+import TechnologyList from "./TechnologyList";
 
 const ProjectCard = ({ projects }) => {
     // Styles
@@ -18,7 +19,7 @@ const ProjectCard = ({ projects }) => {
             [theme.breakpoints.up("lg")]: {
                 flexDirection: "row"
             }
-        }, 
+        },
         featuredAlt: {
             display: "flex",
             flexDirection: "column",
@@ -87,6 +88,7 @@ const ProjectCard = ({ projects }) => {
                     <Typography variant="h6" className={`${classes.bodyText} ${classes.boldText}`}>{project.title}</Typography>
                     <Typography variant="body2" className={classes.bodyText}><Link href={project.link} target="_blank" rel="noopener">Github Source
                         Code</Link></Typography>
+                    <TechnologyList technologies={project.technologies} />
                     <Typography variant="body2" paragraph className={classes.bodyText}>{project.shortDescription}</Typography>
                     <ul>
                         {project.detailedDescription.map(line => <li key={line}><Typography variant="body2" className={classes.bodyText}>{line}</Typography></li>)}

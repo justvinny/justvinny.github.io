@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import TopMenuBar from "./Components/Menu/TopMenuBar";
 import { Typography, makeStyles, useMediaQuery, Link } from "@material-ui/core";
 import { Email, LinkedIn, Instagram } from "@material-ui/icons";
@@ -58,8 +58,6 @@ const App = () => {
 
   const responsiveMenuQuery = useMediaQuery("(min-width:800px)");
   const responsiveHeaderQuery = useMediaQuery("(min-width:600px)");
-
-  const [contactMeBtnClicked, setContactMeBtnClicked] = useState(false);
   return (
     <>
       <Router>

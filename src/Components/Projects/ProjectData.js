@@ -13,6 +13,14 @@ const projectData = [
             "Menu navigation uses React Router so user won't have to load new pages from scratch.",
             "Site is built mobile first but is responsive to larger screens such as Tablets and Desktops.",
             "Site is hosted on Github pages."
+        ],
+        technologies: [
+            "Javascript",
+            "HTML",
+            "CSS",
+            "React",
+            "Material UI",
+            "Github Pages"
         ]
     },
     {
@@ -33,6 +41,12 @@ const projectData = [
             "Event log for player interactions with different game objects such as treasures, battles, and bosses.",
             "Map generated from ASCII text.",
             "Camera view that centers on player."
+        ],
+        technologies: [
+            "Java",
+            "Swing",
+            "Lanterna CLI",
+            "JDBC"
         ]
     },
     {
@@ -51,6 +65,11 @@ const projectData = [
             "Account sorting feature.",
             "Import/Export CSV feature.",
             "Create passcode and login feature using SharedPreferences."
+        ],
+        technologies: [
+            "Java",
+            "Android Studio",
+            "Room"
         ]
     },
     {
@@ -64,6 +83,10 @@ const projectData = [
             "Write journal entries about your day and store them permanently to local storage.",
             "Add events to your weekly scheduler so you can priorities things you should do in a week.",
             "Various sortings option availalbe for the weekly scheduler such as sorting by date."
+        ],
+        technologies: [
+            "Java",
+            "Swing"
         ]
     },
     {
@@ -78,6 +101,10 @@ const projectData = [
             "Store account passwords to local storage.",
             "Easily retrieve account passwords stored by copying a password to the clipboard.",
             "Remove old accounts that you don't need anymore."
+        ],
+        technologies: [
+            "Python",
+            "Tkinter"
         ]
     }
 ];
