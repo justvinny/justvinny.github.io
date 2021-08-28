@@ -7,7 +7,7 @@ const DrawerMenu = ({ showDrawer, toggleDrawer, scrollToTop }) => {
     // Styles
     const styles = makeStyles({
         list: {
-            width: 250
+            width: 275
         },
         listItem: {
             marginLeft: 10
@@ -34,6 +34,9 @@ const DrawerMenu = ({ showDrawer, toggleDrawer, scrollToTop }) => {
                 </ListItem>
                 <ListItem button onClick={toggleAndScrollToTop}>
                     <Link to="/projects" className="DrawerLink">Projects</Link>
+                </ListItem>
+                <ListItem button onClick={toggleAndScrollToTop}>
+                    <Link to="/ongoing-projects" className="DrawerLink">Ongoing Projects</Link>
                 </ListItem>
                 <ListItem button onClick={toggleDrawer}>
                     <HashLink to="#Footer" className="DrawerLink">Contact Me</HashLink>

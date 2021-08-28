@@ -1,6 +1,7 @@
 const projectData = [
     {
         isFeatured: false,
+        isFinished: true,
         title: "This Website",
         image: "images/website-screen.JPG",
         iamgeAlt: "Screenshot of this portfolio website.",
@@ -25,6 +26,7 @@ const projectData = [
     },
     {
         isFeatured: true,
+        isFinished: true,
         title: "Basic 2D RPG Game",
         image: "images/rpg-project-image.JPG",
         iamgeAlt: "RPG Game Screenshot with character and golem sprite.",
@@ -51,6 +53,7 @@ const projectData = [
     },
     {
         isFeatured: true,
+        isFinished: true,
         title: "Password Manager (Android)",
         image: "images/password-manager-screens-p1.png",
         iamgeAlt: "Password Manager Android Application Screenshot",
@@ -74,6 +77,7 @@ const projectData = [
     },
     {
         isFeatured: false,
+        isFinished: true,
         title: "Life Manager",
         image: "images/life-manager-screen.PNG",
         iamgeAlt: "Life Manager Application Screenshot",
@@ -91,6 +95,7 @@ const projectData = [
     },
     {
         isFeatured: false,
+        isFinished: true,
         title: "Pass Volt",
         image: "images/tk-pass-volt-screen.png",
         iamgeAlt: "Pass Volt Application Screenshot",
@@ -106,9 +111,59 @@ const projectData = [
             "Python",
             "Tkinter"
         ]
+    },
+    {
+        isFeatured: false,
+        isFinished: false,
+        isMobile: true,
+        featuredOngoing: true,
+        title: "Patient Management System",
+        image: "images/patient-management-system.gif",
+        iamgeAlt: "Patient Management System Animated GIF Screenshot",
+        link: "https://github.com/justvinny/sdp-team-doctor-hu",
+        shortDescription: "This is a project I'm working on with 3 other people for our Software Development Practice paper. It allows staff at small clinics to communicate with each other realtime, post important notes for staff & patients to read, upload medical results, and book appointments. Below are feautures I was primarily responsible for.",
+        detailedDescription: [
+            "Realtime messaging using Firebase.",
+            "Authentication flow",
+            "Search feature to look up staff and patients.",
+            "Search filters and sorting",
+            "Firestore queries"
+        ],
+        technologies: [
+            "Javascript",
+            "React Native",
+            "Firebase"
+        ]
+    },
+    {
+        isFeatured: false,
+        isFinished: false,
+        title: "Gym Tracker Web App",
+        image: "images/gym-tracker-screens.PNG",
+        iamgeAlt: "Pass Volt Application Screenshot",
+        link: "https://github.com/justvinny/full-stack-gym-tracker-app",
+        liveLink: "http://justvinny-gym-app.herokuapp.com/#/track-progress",
+        shortDescription: "As an avid gym goer, I always thought it'd be nice to be able to track my progress in the gym. This is to ensure that I am indeed pushing myself hard enough and inducing progressive overload. This is still a work in progress and has taken a backset due to university studies. I already am using this in my workouts even though is still very bare bones and I have huge plans for it. List below are the currently working features.",
+        detailedDescription: [
+            "Create workout routines",
+            "Dynamically adding exercises to your routines",
+            "Track and record your progress such as number of repetitions, sets, and weight lifted."
+        ],
+        technologies: [
+            "Javascript",
+            "HTML",
+            "CSS",
+            "Material UI",
+            "MongoDB",
+            "NodeJS",
+            "Express"
+        ]
     }
 ];
 
 const featuredProjects = projectData.filter(project => project.isFeatured);
+const ongoingProjects = projectData.filter(project => !project.isFinished);
+const finishedProjects = projectData.filter(project => project.isFinished);
+const featuredOngoingProject = projectData.filter(project => project.featuredOngoing);
 
-export {projectData, featuredProjects};
+export {finishedProjects, featuredProjects, featuredOngoingProject, ongoingProjects};

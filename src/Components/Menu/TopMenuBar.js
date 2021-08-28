@@ -56,6 +56,7 @@ const TopMenuBar = ({ responsiveMenuQuery, responsiveHeaderQuery }) => {
                 <div>
                     <Button color="inherit" onClick={scrollToTop}><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/" className="MenuItem">Home</Link></Box></Button>
                     <Button color="inherit" onClick={scrollToTop}><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/projects" className="MenuItem">Projects</Link></Box></Button>
+                    <Button color="inherit" onClick={scrollToTop}><Box fontWeight="fontWeightBold" className={classes.menuText}><Link to="/ongoing-projects" className="MenuItem">Ongoing Projects</Link></Box></Button>
                     <Button color="inherit"><Box fontWeight="fontWeightBold" className={classes.menuText}><HashLink to="#Footer" className="MenuItem">Contact Me</HashLink></Box></Button>
                     {menuIcon()}
                 </div>

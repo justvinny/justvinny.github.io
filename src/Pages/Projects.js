@@ -1,4 +1,4 @@
-import { projectData } from "../Components/Projects/ProjectData";
+import { finishedProjects } from "../Components/Projects/ProjectData";
 import ProjectCard from "../Components/ProjectCard";
 import { makeStyles } from "@material-ui/core";
 
@@ -12,7 +12,7 @@ const Projects = () => {
     const classes = styles();
     return (
         <div className={classes.root}>
-            <ProjectCard projects={projectData} />
+            <ProjectCard projects={finishedProjects} />
         </div>
     )
 }

@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Projects from "./Pages/Projects";
 import ContactMe from "./Pages/ContactMe";
+import OngoingProjects from "./Pages/OngoingProjects";
 const App = () => {
   // Styles 
   const styles = makeStyles({
@@ -69,6 +70,9 @@ const App = () => {
             </Route>
             <Route exact path="/projects">
               <Projects />
+            </Route>
+            <Route exact path="/ongoing-projects">
+              <OngoingProjects />
             </Route>
             <Route exact path="/contact-me">
               <ContactMe />

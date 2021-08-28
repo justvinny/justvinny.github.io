@@ -1,7 +1,7 @@
 import { makeStyles, Typography, Avatar, Card } from "@material-ui/core";
 import Socials from "../Components/Menu/Socials";
 import ProjectCard from "../Components/ProjectCard";
-import {featuredProjects} from "../Components/Projects/ProjectData";
+import {featuredOngoingProject, featuredProjects} from "../Components/Projects/ProjectData";
 
 const Home = () => {
     // Styles
@@ -111,6 +111,10 @@ const Home = () => {
                 <Typography variant="h5" className={classes.featuredText}>FEATURED PROJECTS</Typography>
             </Card>
             <ProjectCard projects={featuredProjects} />
+            <Card className={classes.featuredHeader} elevation={5}>
+                <Typography variant="h5" className={classes.featuredText}>FEATURED ONGOING PROJECT</Typography>
+            </Card>
+            <ProjectCard projects={featuredOngoingProject} />
         </div>
     )
 }
