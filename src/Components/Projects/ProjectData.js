@@ -121,7 +121,7 @@ const projectData = [
         image: "images/patient-management-system.gif",
         iamgeAlt: "Patient Management System Animated GIF Screenshot",
         link: "https://github.com/justvinny/sdp-team-doctor-hu",
-        shortDescription: "This is a project I'm working on with 3 other people for our Software Development Practice paper. It allows staff at small clinics to communicate with each other realtime, post important notes for staff & patients to read, upload medical results, and book appointments. Below are feautures I was primarily responsible for.",
+        shortDescription: "This is a project I'm working on with 3 other people for our Software Development Practice paper. It allows staff at small clinics to communicate with each other realtime, post important notes for staff & patients to read, upload medical results, and book appointments. Below are features I was primarily responsible for.",
         detailedDescription: [
             "Realtime messaging using Firebase.",
             "Authentication flow",
@@ -142,8 +142,7 @@ const projectData = [
         image: "images/gym-tracker-screens.PNG",
         iamgeAlt: "Pass Volt Application Screenshot",
         link: "https://github.com/justvinny/full-stack-gym-tracker-app",
-        liveLink: "http://justvinny-gym-app.herokuapp.com/#/track-progress",
-        shortDescription: "As an avid gym goer, I always thought it'd be nice to be able to track my progress in the gym. This is to ensure that I am indeed pushing myself hard enough and inducing progressive overload. This is still a work in progress and has taken a backset due to university studies. I already am using this in my workouts even though is still very bare bones and I have huge plans for it. List below are the currently working features.",
+        shortDescription: "As an avid gym goer, I always thought it'd be nice to be able to track my progress in the gym. This is to ensure that I am indeed pushing myself hard enough and induce progressive overload. This is still a work in progress and has taken a backseat due to university studies. Nevertheless, I already am using this in my workouts even though it is still very bare bones. Listed below are the currently working features.",
         detailedDescription: [
             "Create workout routines",
             "Dynamically adding exercises to your routines",

@@ -17,6 +17,10 @@ const DrawerMenu = ({ showDrawer, toggleDrawer, scrollToTop }) => {
         },
         topMargin: {
             marginTop: 10
+        },
+        linkContainer: {
+            display: "flex",
+            alignSelf: "stretch"
         }
     });
     const classes = styles();
@@ -29,16 +33,16 @@ const DrawerMenu = ({ showDrawer, toggleDrawer, scrollToTop }) => {
         <Drawer anchor="right" open={showDrawer} onClose={toggleDrawer} >
             <List className={classes.list} >
                 <Divider className={classes.marginTop} />
-                <ListItem button onClick={toggleAndScrollToTop}>
+                <ListItem button onClick={toggleAndScrollToTop} className={classes.linkContainer}>
                     <Link to="/" className="DrawerLink">Home</Link>
                 </ListItem>
-                <ListItem button onClick={toggleAndScrollToTop}>
+                <ListItem button onClick={toggleAndScrollToTop} className={classes.linkContainer}>
                     <Link to="/projects" className="DrawerLink">Projects</Link>
                 </ListItem>
-                <ListItem button onClick={toggleAndScrollToTop}>
+                <ListItem button onClick={toggleAndScrollToTop} className={classes.linkContainer}>
                     <Link to="/ongoing-projects" className="DrawerLink">Ongoing Projects</Link>
                 </ListItem>
-                <ListItem button onClick={toggleDrawer}>
+                <ListItem button onClick={toggleDrawer} className={classes.linkContainer}>
                     <HashLink to="#Footer" className="DrawerLink">Contact Me</HashLink>
                 </ListItem>
                 <Divider />
