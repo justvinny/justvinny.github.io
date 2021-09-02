@@ -1,5 +1,6 @@
 import { makeStyles, Card, CardMedia, Typography, Link } from "@material-ui/core";
 import TechnologyList from "./TechnologyList";
+import YouTube from "react-youtube";
 
 const ProjectCard = ({ projects }) => {
     // Styles
@@ -41,18 +42,14 @@ const ProjectCard = ({ projects }) => {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            padding: 10,
-            // [theme.breakpoints.up("md")]: {
-            //     marginLeft: "5vw",
-            //     marginRight: "5vw"
-            // }
+            padding: 10
         },
         mobileImg: {
             width: 150,
             [theme.breakpoints.up("md")]: {
                 width: 250,
-                marginLeft: 40,
-                marginRight: 40
+                marginLeft: 80,
+                marginRight: 80
             }
         },
         cardImg: {
@@ -63,9 +60,19 @@ const ProjectCard = ({ projects }) => {
                 marginRight: 10
             },
             [theme.breakpoints.up("lg")]: {
-                width: 450
+                width: "35vw"
+            }
+        },
+        youtube: {
+            margin: 0,
+            padding: 0,
+            width: "100vw",
+            [theme.breakpoints.up("md")]: {
+                marginLeft: 10,
+                marginRight: 10,
+                width: "80vw"
             },
-            [theme.breakpoints.up("xl")]: {
+            [theme.breakpoints.up("lg")]: {
                 width: "35vw"
             }
         },
@@ -94,11 +101,18 @@ const ProjectCard = ({ projects }) => {
         alternateFlex = !alternateFlex;
         return (
             <Card key={project.title} className={`${alternateFlex ? classes.featured : classes.featuredAlt} landscapeView`} elevation={5}>
-                <CardMedia
-                    component="img"
-                    image={project.image}
-                    alt={project.imageAlt}
-                    className={project.isMobile ? classes.mobileImg : classes.cardImg} />
+                {project.youtubeId
+                    ? <>
+                        <YouTube
+                            className={classes.youtube}
+                            videoId={project.youtubeId}
+                        /></>
+                    : <CardMedia
+                        component="img"
+                        image={project.image}
+                        alt={project.imageAlt}
+                        className={project.isMobile ? classes.mobileImg : classes.cardImg} />
+                }
                 <div className={classes.featuredBody}>
                     <Typography variant="h6" className={`${classes.bodyText} ${classes.boldText}`}>{project.title}</Typography>
                     <Typography variant="body2" className={`${classes.linkText} ${classes.bodyText}`}><Link href={project.link} target="_blank" rel="noopener">Github Source

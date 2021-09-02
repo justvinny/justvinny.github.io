@@ -28,6 +28,7 @@ const projectData = [
         isFeatured: true,
         isFinished: true,
         title: "Basic 2D RPG Game",
+        youtubeId: "oBZ6oHcIP7Y",
         image: "images/rpg-project-image.JPG",
         iamgeAlt: "RPG Game Screenshot with character and golem sprite.",
         link: "https://github.com/justvinny/rpg-game-pdc",
