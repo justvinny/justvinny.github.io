@@ -114,10 +114,10 @@ const projectData = [
         ]
     },
     {
-        isFeatured: false,
-        isFinished: false,
+        isFeatured: true,
+        isFinished: true,
         isMobile: true,
-        featuredOngoing: true,
+        featuredOngoing: false,
         title: "Patient Management System",
         image: "images/patient-management-system.gif",
         iamgeAlt: "Patient Management System Animated GIF Screenshot",
@@ -125,10 +125,11 @@ const projectData = [
         shortDescription: "This is a project I'm working on with 3 other people for our Software Development Practice paper. It allows staff at small clinics to communicate with each other realtime, post important notes for staff & patients to read, upload medical results, and book appointments. Below are features I was primarily responsible for.",
         detailedDescription: [
             "Realtime messaging using Firebase.",
+            "Realtime comment chain for Staff and Patients",
             "Authentication flow",
             "Search feature to look up staff and patients.",
             "Search filters and sorting",
-            "Firestore queries"
+            "Firestore queries",
         ],
         technologies: [
             "Javascript",
@@ -139,12 +140,14 @@ const projectData = [
     {
         isFeatured: false,
         isFinished: false,
+        featuredOngoing: true,
         title: "Gym Tracker Web App",
         image: "images/gym-tracker-screens.PNG",
         iamgeAlt: "Pass Volt Application Screenshot",
         link: "https://github.com/justvinny/full-stack-gym-tracker-app",
         shortDescription: "As an avid gym goer, I always thought it'd be nice to be able to track my progress in the gym. This is to ensure that I am indeed pushing myself hard enough and induce progressive overload. This is still a work in progress and has taken a backseat due to university studies. Nevertheless, I already am using this in my workouts even though it is still very bare bones. Listed below are the currently working features.",
         detailedDescription: [
+            "Awesome looking dashboard.",
             "Create workout routines",
             "Dynamically adding exercises to your routines",
             "Track and record your progress such as number of repetitions, sets, and weight lifted."
