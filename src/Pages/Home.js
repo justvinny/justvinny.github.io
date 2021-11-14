@@ -80,7 +80,8 @@ const Home = () => {
         }, aboutMeText: {
             [theme.breakpoints.up("xl")]: {
                 fontSize: "1.0vw"
-            }
+            },
+            textAlign: "justify",
         }
     }));
     const classes = styles();
