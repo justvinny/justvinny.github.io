@@ -79,7 +79,8 @@ const ProjectCard = ({ projects }) => {
         bodyText: {
             [theme.breakpoints.up("xl")]: {
                 fontSize: "1vw"
-            }
+            },
+            textAlign: "justify",
         },
         linkText: {
             alignSelf: "stretch",

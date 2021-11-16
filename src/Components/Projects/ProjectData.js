@@ -1,5 +1,29 @@
 const projectData = [
     {
+        isFeatured: true,
+        isFinished: true,
+        isMobile: true,
+        featuredOngoing: false,
+        title: "Patient Management System",
+        image: "images/patient-management-system.gif",
+        iamgeAlt: "Patient Management System Animated GIF Screenshot",
+        link: "https://github.com/justvinny/sdp-team-doctor-hu",
+        shortDescription: "Group (4 people) for our Software Development Practice paper. It's a Patient Management System that allows Staff and Patients to communicate realtime and gives the ability to update patients quickly on their medical results. features I was primarily responsible for.",
+        detailedDescription: [
+            "Realtime messaging using Firebase.",
+            "Realtime comment chain for Staff and Patients",
+            "Authentication flow",
+            "Search feature to look up staff and patients.",
+            "Search filters and sorting",
+            "Firestore queries",
+        ],
+        technologies: [
+            "Javascript",
+            "React Native",
+            "Firebase"
+        ]
+    },
+    {
         isFeatured: false,
         isFinished: true,
         title: "This Website",
@@ -111,30 +135,6 @@ const projectData = [
         technologies: [
             "Python",
             "Tkinter"
-        ]
-    },
-    {
-        isFeatured: true,
-        isFinished: true,
-        isMobile: true,
-        featuredOngoing: false,
-        title: "Patient Management System",
-        image: "images/patient-management-system.gif",
-        iamgeAlt: "Patient Management System Animated GIF Screenshot",
-        link: "https://github.com/justvinny/sdp-team-doctor-hu",
-        shortDescription: "This is a project I'm working on with 3 other people for our Software Development Practice paper. It allows staff at small clinics to communicate with each other realtime, post important notes for staff & patients to read, upload medical results, and book appointments. Below are features I was primarily responsible for.",
-        detailedDescription: [
-            "Realtime messaging using Firebase.",
-            "Realtime comment chain for Staff and Patients",
-            "Authentication flow",
-            "Search feature to look up staff and patients.",
-            "Search filters and sorting",
-            "Firestore queries",
-        ],
-        technologies: [
-            "Javascript",
-            "React Native",
-            "Firebase"
         ]
     },
     {
