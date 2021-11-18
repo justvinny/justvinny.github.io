@@ -8,7 +8,7 @@ const projectData = [
         image: "images/patient-management-system.gif",
         iamgeAlt: "Patient Management System Animated GIF Screenshot",
         link: "https://github.com/justvinny/sdp-team-doctor-hu",
-        shortDescription: "Group (4 people) for our Software Development Practice paper. It's a Patient Management System that allows Staff and Patients to communicate realtime and gives the ability to update patients quickly on their medical results. features I was primarily responsible for.",
+        shortDescription: "Group (4 people) project for our Software Development Practice paper. It's a Patient Management System that allows Staff and Patients to communicate realtime and gives the ability to update patients quickly on their medical results. Below are some features I was primarily responsible for.",
         detailedDescription: [
             "Realtime messaging using Firebase.",
             "Realtime comment chain for Staff and Patients",
