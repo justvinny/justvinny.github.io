@@ -90,7 +90,7 @@ const Home = () => {
         name: "Vinson",
         avatar: "images/profile-pic.jpg",
         avatarAlt: "A photo of myself.",
-        summary: `Kia ora! I'm Vinson, a university student studying Computer Science and Software Development at
+        summary: `Kia ora! I'm Vinson. I'm a Software Engineering Intern at Xero and a final year university student studying Software Development at
         the Auckland University of Technology. I am particulary interested in either creating software
         that is helpful to my daily life or making games that I find interesting. On my off days, if you
         don't find me having a barbie with my mates or lifting iron in the gym, I'm most likely either making my
