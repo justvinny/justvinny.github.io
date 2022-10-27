@@ -1,0 +1,78 @@
+#navBar {
+  width: 100%;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  color: white;
+}
+
+.navBrand {
+  font-size: 24px;
+}
+
+.navLink,
+.navBrand {
+  font-weight: bold;
+}
+
+.navLink:hover,
+.navMenuBtn:hover,
+.navBrand:hover {
+  cursor: pointer;
+  filter: brightness(0.7);
+}
+
+.navMenuBtn {
+  padding-top: 8px;
+  background-color: transparent;
+}
+
+.drawerOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.drawer {
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  animation-name: slideleft;
+  animation-duration: 500ms;
+}
+
+.backdropBtn {
+  background-color: black;
+  opacity: 0.7;
+  flex-grow: 1;
+}
+
+@keyframes slideleft {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 200px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .navMenuBtn {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  #navList {
+    display: none;
+  }
+}
