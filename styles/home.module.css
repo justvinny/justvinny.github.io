@@ -1,0 +1,92 @@
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 865px;
+  background-image: url("/images/hero-background.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 800px;
+  background-color: rgba(4, 22, 41, 0.9);
+  color: white;
+  overflow: hidden;
+}
+
+.heroHeadersContainer {
+  width: 57.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heroHeader {
+  font-size: 50px;
+  white-space: nowrap;
+  margin-bottom: 12px;
+}
+
+.avatarContainer {
+  width: 42.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: fit-content;
+}
+
+.slideRight {
+  animation-name: slideright;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  margin-right: 60vw;
+  overflow: hidden;
+}
+
+@keyframes slideright {
+  from {
+    margin-right: 60vw;
+  }
+
+  to {
+    margin-right: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .card,
+  .footer {
+    border-color: #222;
+  }
+  .code {
+    background: #111;
+  }
+  .logo img {
+    filter: invert(1);
+  }
+}

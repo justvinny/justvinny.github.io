@@ -4,23 +4,34 @@ import { mdiMenu } from "@mdi/js";
 import { useState } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
 import Link from "next/link";
+import { Montserrat } from "@next/font/google";
 
 interface NavLinkInterface {
   isRow: Boolean;
 }
 
+const montserrat = Montserrat({ weight: "900" });
+
 const addMarginLeftOrTop = (isRow: Boolean) => (isRow ? "ml-1" : "mt-1");
 
 const NavLinks = ({ isRow }: NavLinkInterface) => (
   <>
-    <li className={styles.navLink}>
-      <Link href="/">Home</Link>
+    <li className={`${styles.navLink} ${montserrat.className}`}>
+      <Link href="/" style={{zIndex: 2}}>HOME</Link>
     </li>
-    <li className={`${styles.navLink} ${addMarginLeftOrTop(isRow)}`}>
-      <Link href="/projects">Projects</Link>
+    <li
+      className={`${styles.navLink} ${addMarginLeftOrTop(isRow)} ${
+        montserrat.className
+      }`}
+    >
+      <Link href="/projects">PROJECTS</Link>
     </li>
-    <li className={`${styles.navLink} ${addMarginLeftOrTop(isRow)}`}>
-      <Link href="/">Contact Me</Link>
+    <li
+      className={`${styles.navLink} ${addMarginLeftOrTop(isRow)} ${
+        montserrat.className
+      }`}
+    >
+      <Link href="/">CONTACT ME</Link>
     </li>
   </>
 );
@@ -57,7 +68,9 @@ const NavBar = () => {
         </div>
       ) : null}
       <div id={styles.navBar}>
-        <span className={styles.navBrand}>Vinson Beduya</span>
+        <span className={`${styles.navBrand} ${montserrat.className}`}>
+          VINSON BEDUYA
+        </span>
         <ul id={styles.navList} className="flex-row-start-center">
           <NavLinks isRow={true} />
         </ul>
