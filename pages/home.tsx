@@ -11,6 +11,7 @@ const Home = () => {
       (header, index) => {
         return (
           <span
+            key={header}
             className={`${styles.slideRight} ${styles.heroHeader} ${montserrat.className}`}
             style={{ animationDelay: `${index * 500 + 350}ms` }}
           >
@@ -31,7 +32,6 @@ const Home = () => {
         <div className={styles.avatarContainer}>
           <img
             src="/images/profile-pic.jpg"
-            height="450"
             className={styles.avatar}
           />
         </div>

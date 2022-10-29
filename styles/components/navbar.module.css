@@ -7,7 +7,7 @@
   align-items: center;
   padding: 12px 5vw;
   color: white;
-  z-index: 1;
+  z-index: 2;
 }
 
 .navBrand {
@@ -24,6 +24,7 @@
 .navMenuBtn {
   padding-top: 8px;
   background-color: transparent;
+  border: none;
 }
 
 .drawerOverlay {
@@ -34,6 +35,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  z-index: 2;
 }
 
 .drawer {
@@ -61,6 +63,16 @@
   }
 }
 
+@media (max-width: 1350px) {
+  .navBrand {
+    font-size: 18px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .navMenuBtn {
     display: none;
@@ -72,3 +84,6 @@
     display: none;
   }
 }
+
+
+

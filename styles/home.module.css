@@ -51,6 +51,7 @@
 .avatar {
   border-radius: 50%;
   width: fit-content;
+  width: 450px;
 }
 
 .slideRight {
@@ -75,6 +76,74 @@
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 1350px) {
+  .heroHeader {
+    font-size: 40px;
+  }
+
+  .avatar {
+    width: 350px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .heroContainer {
+    flex-direction: column-reverse;
+  }
+
+  .avatarContainer {
+    width: fit-content;
+  }
+
+  .heroHeadersContainer {
+    align-items: center;
+    margin-top: 2em;
+    width: fit-content;
+  }
+
+  .slideRight {
+    margin-right: 1500px;
+  }
+  
+  @keyframes slideright {
+    from {
+      margin-right: 1500px;
+    }
+  
+    to {
+      margin-right: 0px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .heroHeader {
+    font-size: 30px;
+  }
+
+  .avatar {
+    width: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .backgroundImage {
+    height: 568px;
+  }
+
+  .heroContainer {
+    height: 500px;
+  }
+
+  .heroHeader {
+    font-size: 20px;
+  }
+
+  .avatar {
+    width: 200px;
   }
 }
 
