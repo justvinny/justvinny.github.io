@@ -52,12 +52,12 @@ const NavBar = () => {
       <li className={addMarginLeftOrTop(isRow)}>
         <a href="#getInTouch">
           <button
-            className={`${styles.navLinkBtn} ${montserrat.className} ${
-              isRow ? styles.getInTouchBtn : ""
+            className={`${montserrat.className} ${
+              isRow ? styles.getInTouchBtn : styles.navLinkBtn
             }`}
             onClick={dismissDrawer}
           >
-            GET IN TOUCH
+            <span>GET IN TOUCH</span>
           </button>
         </a>
       </li>

@@ -39,7 +39,7 @@ const GetInTouch = () => (
     </div>
     <span className={montserratReg.className}>© Copyright Vinson Beduya 2022</span>
     <a href="#">
-      <Icon path={mdiChevronUp} size={5.5} color="white" />
+      <Icon path={mdiChevronUp} size={5.5} />
     </a>
   </div>
 );

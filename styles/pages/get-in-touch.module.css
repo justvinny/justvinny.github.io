@@ -13,11 +13,11 @@
 }
 
 .getInTouchContainer > a {
-  transition: filter 400ms;
+  transition: color 400ms;
 }
 
 .getInTouchContainer > a:hover {
-  filter: brightness(0.7);
+  color: rgb(117, 182, 250);
 }
 
 .linksContainer {
