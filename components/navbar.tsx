@@ -3,7 +3,6 @@ import Icon from "@mdi/react";
 import { mdiMenu } from "@mdi/js";
 import { useState } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
-import Link from "next/link";
 import { Montserrat } from "@next/font/google";
 
 interface NavLinkInterface {
@@ -13,28 +12,6 @@ interface NavLinkInterface {
 const montserrat = Montserrat({ weight: "900" });
 
 const addMarginLeftOrTop = (isRow: Boolean) => (isRow ? "ml-1" : "mt-1");
-
-const NavLinks = ({ isRow }: NavLinkInterface) => (
-  <>
-    <li className={`${styles.navLink} ${montserrat.className}`}>
-      <Link href="/" style={{zIndex: 2}}>HOME</Link>
-    </li>
-    <li
-      className={`${styles.navLink} ${addMarginLeftOrTop(isRow)} ${
-        montserrat.className
-      }`}
-    >
-      <Link href="/projects">PROJECTS</Link>
-    </li>
-    <li
-      className={`${styles.navLink} ${addMarginLeftOrTop(isRow)} ${
-        montserrat.className
-      }`}
-    >
-      <Link href="/">CONTACT ME</Link>
-    </li>
-  </>
-);
 
 const NavBar = () => {
   const [isDrawerShown, setDrawerShown] = useState(false);
@@ -49,6 +26,43 @@ const NavBar = () => {
   const dismissDrawer = () => {
     setDrawerShown(false);
   };
+
+  const NavLinks = ({ isRow }: NavLinkInterface) => (
+    <>
+      <li>
+        <a href="#">
+          <button
+            className={`${styles.navLinkBtn} ${montserrat.className}`}
+            onClick={dismissDrawer}
+          >
+            HOME
+          </button>
+        </a>
+      </li>
+      <li className={addMarginLeftOrTop(isRow)}>
+        <a href="#projects">
+          <button
+            className={`${styles.navLinkBtn}  ${montserrat.className}`}
+            onClick={dismissDrawer}
+          >
+            PROJECTS
+          </button>
+        </a>
+      </li>
+      <li className={addMarginLeftOrTop(isRow)}>
+        <a href="#getInTouch">
+          <button
+            className={`${styles.navLinkBtn} ${montserrat.className} ${
+              isRow ? styles.getInTouchBtn : ""
+            }`}
+            onClick={dismissDrawer}
+          >
+            GET IN TOUCH
+          </button>
+        </a>
+      </li>
+    </>
+  );
 
   return (
     <>
@@ -68,9 +82,11 @@ const NavBar = () => {
         </div>
       ) : null}
       <div id={styles.navBar}>
-        <span className={`${styles.navBrand} ${montserrat.className}`}>
-          VINSON BEDUYA
-        </span>
+        <a href="#">
+          <button className={`${styles.navBrand} ${montserrat.className}`}>
+            VINSON BEDUYA
+          </button>
+        </a>
         <ul id={styles.navList} className="flex-row-start-center">
           <NavLinks isRow={true} />
         </ul>

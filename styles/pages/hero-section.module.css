@@ -1,10 +1,10 @@
 .backgroundImage {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   opacity: 1;
   width: 100%;
-  height: 865px;
+  height: 100%;
   background-image: url("/images/hero-background.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -21,6 +21,7 @@
   height: 800px;
   background-color: rgba(4, 22, 41, 0.9);
   color: white;
+  margin-top: 102px;
   overflow: hidden;
 }
 
@@ -54,6 +55,12 @@
   width: 450px;
 }
 
+.projectsAnchor {
+  position: absolute;
+  top: 800px;
+  left: 0px;
+}
+
 .slideRight {
   animation-name: slideright;
   animation-duration: 500ms;
@@ -72,13 +79,6 @@
   }
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
-}
-
 @media (max-width: 1350px) {
   .heroHeader {
     font-size: 40px;
@@ -86,6 +86,10 @@
 
   .avatar {
     width: 350px;
+  }
+
+  .heroContainer {
+    margin-top: 99px;
   }
 }
 
@@ -107,15 +111,21 @@
   .slideRight {
     margin-right: 1500px;
   }
-  
+
   @keyframes slideright {
     from {
       margin-right: 1500px;
     }
-  
+
     to {
       margin-right: 0px;
     }
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .heroContainer {
+    margin-top: 72px;
   }
 }
 
@@ -129,15 +139,25 @@
   }
 }
 
-@media (max-width: 450px) {
-  .backgroundImage {
-    height: 568px;
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
   }
+}
 
+@media (max-width: 450px) {
   .heroContainer {
     height: 500px;
+    margin-top: 72px;
   }
 
+  .projectsAnchor {
+    position: absolute;
+    top: 500px;
+    left: 0px;
+  }
+  
   .heroHeader {
     font-size: 20px;
   }

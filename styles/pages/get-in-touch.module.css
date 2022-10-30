@@ -1,0 +1,50 @@
+.getInTouchContainer {
+  background-color: hsla(211, 82%, 5%, 0.95);
+  color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linksRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.getInTouchContainer > a {
+  transition: filter 400ms;
+}
+
+.getInTouchContainer > a:hover {
+  filter: brightness(0.7);
+}
+
+.linksContainer {
+  margin: 2.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
+.linksContainer > .linksRow > a {
+  margin-right: 1rem;
+}
+
+.header {
+  margin-top: 2rem;
+  font-size: 40px;
+}
+
+@media (max-width: 550px) {
+  .linksContainer {
+    flex-direction: column;
+  }
+
+  .linksContainer > .linksRow:nth-child(2) {
+    margin-top: 1rem;
+  }
+
+  .linksContainer > .linksRow > a:nth-child(2) {
+    margin-right: 0px;
+  }
+}

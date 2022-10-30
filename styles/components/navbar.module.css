@@ -1,4 +1,6 @@
 #navBar {
+  position: fixed;
+  top: 0px;
   width: 100%;
   background-color: rgba(4, 22, 41, 0.9);
   display: flex;
@@ -12,13 +14,55 @@
 
 .navBrand {
   font-size: 28px;
+  color: inherit;
+  background-color: transparent;
+  border: none;
 }
 
-.navLink:hover,
+.navLinkBtn,
+.navMenuBtn,
+.navBrand {
+  transition: filter 400ms;
+}
+
+.navLinkBtn:hover,
+.navMenuBtn:hover,
+.navBrand:hover {
+  filter: brightness(0.7);
+}
+
+.navLinkBtn:hover,
 .navMenuBtn:hover,
 .navBrand:hover {
   cursor: pointer;
-  filter: brightness(0.7);
+}
+
+.navLinkBtn {
+  border: none;
+  background-color: transparent;
+  color: inherit;
+  font-family: inherit;
+  padding: 0px;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.getInTouchBtn {
+  border: 3px solid rgb(117, 182, 250);
+  padding: 16px;
+  border-radius: 8px;
+  transition: background-color 400ms;
+}
+
+.getInTouchBtn:hover {
+  background-color: rgb(117, 182, 250);
+}
+
+.getInTouchBtn > a {
+  margin-left: 8px;
 }
 
 .navMenuBtn {
@@ -35,7 +79,7 @@
   height: 100%;
   display: flex;
   flex-direction: row;
-  z-index: 2;
+  z-index: 3;
 }
 
 .drawer {
@@ -65,11 +109,11 @@
 
 @media (max-width: 1350px) {
   .navBrand {
-    font-size: 18px;
+    font-size: 22px;
   }
 
-  .navLink {
-    font-size: 12px;
+  .navLinkBtn {
+    font-size: 10px;
   }
 }
 
@@ -84,6 +128,3 @@
     display: none;
   }
 }
-
-
-
