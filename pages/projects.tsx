@@ -4,6 +4,7 @@ import { Montserrat } from "@next/font/google";
 import { useMediaQuery } from "@react-hook/media-query";
 import OutlinedButton from "../components/outlined-button";
 import TextBubble from "../components/text-bubble";
+import YouTube from "react-youtube";
 
 const monsterrat = Montserrat({ weight: "900" });
 const monsterratReg = Montserrat({ weight: "400" });
@@ -18,7 +19,10 @@ const Projects = () => {
         <span>{project.shortDescription}</span>
         <div className={styles.technologiesContainer}>
           {project.technologies.map((technology) => (
-            <TextBubble key={`${technology}${project.title}`} label={technology} />
+            <TextBubble
+              key={`${technology}${project.title}`}
+              label={technology}
+            />
           ))}
         </div>
         <ul>
@@ -33,7 +37,15 @@ const Projects = () => {
     );
     const image = () => (
       <div>
-        <div style={{ backgroundImage: `url("${project.image}")` }} />
+        {project.youtubeId != null ? (
+          <YouTube
+            videoId={project.youtubeId}
+            id={project.youtubeId}
+            iframeClassName={styles.youTube}
+          />
+        ) : (
+          <div style={{ backgroundImage: `url("${project.image}")` }} />
+        )}
       </div>
     );
     return (
