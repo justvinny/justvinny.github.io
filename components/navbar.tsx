@@ -56,14 +56,14 @@ const NavBar = () => {
             <OutlinedButton
               label="Get in Touch"
               onClick={dismissDrawer}
-              extraBtnStyle={[styles.navLinkBtn]}
             />
           ) : (
-            <OutlinedButton
-              label="Get in Touch"
+            <button
+              className={`${styles.navLinkBtn}  ${montserrat.className}`}
               onClick={dismissDrawer}
-              btnStyle={styles.navLinkBtn}
-            />
+            >
+              Get in Touch
+            </button>
           )}
         </a>
       </li>

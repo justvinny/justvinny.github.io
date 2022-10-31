@@ -116,6 +116,7 @@
 
   .avatar {
     width: 350px;
+    height: 350px;
   }
 }
 
@@ -148,6 +149,7 @@
 
   .avatar {
     width: 300px;
+    height: 300px;
   }
 
   @keyframes slideright {
