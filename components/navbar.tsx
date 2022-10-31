@@ -33,6 +33,7 @@ const NavBar = () => {
       <li>
         <a href="#">
           <button
+            type="button"
             className={`${styles.navLinkBtn} ${montserrat.className}`}
             onClick={dismissDrawer}
           >
@@ -43,6 +44,7 @@ const NavBar = () => {
       <li className={addMarginLeftOrTop(isRow)}>
         <a href="#projects">
           <button
+            type="button"
             className={`${styles.navLinkBtn}  ${montserrat.className}`}
             onClick={dismissDrawer}
           >
@@ -53,12 +55,10 @@ const NavBar = () => {
       <li className={addMarginLeftOrTop(isRow)}>
         <a href="#getInTouch">
           {isRow ? (
-            <OutlinedButton
-              label="Get in Touch"
-              onClick={dismissDrawer}
-            />
+            <OutlinedButton label="Get in Touch" onClick={dismissDrawer} />
           ) : (
             <button
+              type="button"
               className={`${styles.navLinkBtn}  ${montserrat.className}`}
               onClick={dismissDrawer}
             >
@@ -89,7 +89,10 @@ const NavBar = () => {
       ) : null}
       <div id={styles.navBar}>
         <a href="#">
-          <button className={`${styles.navBrand} ${montserrat.className}`}>
+          <button
+            type="button"
+            className={`${styles.navBrand} ${montserrat.className}`}
+          >
             Vinson Beduya
           </button>
         </a>

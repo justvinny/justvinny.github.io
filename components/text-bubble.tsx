@@ -5,7 +5,7 @@ interface Props {
 }
 
 const TextBubble = ({ label }: Props) => (
-  <div className={styles.textBubble}>{label}</div>
+  <span className={styles.textBubble}>{label}</span>
 );
 
 export default TextBubble;

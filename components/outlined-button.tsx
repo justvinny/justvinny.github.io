@@ -19,6 +19,7 @@ const OutlinedButton = ({
   extraBtnStyle = [],
 }: Props) => (
   <button
+    type="button"
     className={`${fontFamily} ${btnStyle} ${extraBtnStyle.map(
       (extraStyle) => `${extraStyle} `
     )}`}
