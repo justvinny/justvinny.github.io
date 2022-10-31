@@ -26,7 +26,7 @@ const Projects = () => {
             <li key={description}>{description}</li>
           ))}
         </ul>
-        <a href={project.link} target="_blank">
+        <a href={project.link} target="_blank" rel="noreferrer">
           <OutlinedButton label="Source Code" />
         </a>
       </div>
