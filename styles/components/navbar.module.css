@@ -50,20 +50,6 @@
   justify-content: center;
 }
 
-.getInTouchBtn {
-  border: 3px solid rgb(117, 182, 250);
-  padding: 16px;
-  border-radius: 8px;
-  transition: background-color 400ms;
-  background-color: transparent;
-  color: white;
-}
-
-.getInTouchBtn:hover {
-  background-color: rgb(117, 182, 250);
-  cursor: pointer;
-}
-
 .getInTouchBtn > a {
   margin-left: 8px;
 }

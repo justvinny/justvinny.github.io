@@ -15,7 +15,7 @@ const montserratReg = Montserrat({ weight: "400" });
 
 const GetInTouch = () => (
   <div id="getInTouch" className={styles.getInTouchContainer}>
-    <span className={`${montserrat.className} ${styles.header}`}>
+    <span className={`${montserrat.className} header`}>
       Get In Touch
     </span>
     <div className={styles.linksContainer}>

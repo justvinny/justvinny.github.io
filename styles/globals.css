@@ -4,12 +4,18 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 h1 {
   padding: 0px;
   margin: 0px;
+}
+
+.header {
+  margin-top: 2rem;
+  font-size: 60px;
+  border-bottom: 10px solid rgb(117, 182, 250);
 }
 
 a {
@@ -53,7 +59,17 @@ ul {
   overflow: hidden;
 }
 
+@media (max-width: 600px) {
+  .header {
+    font-size: 40px;
+  }
+}
 
+@media (max-width: 450px) {
+  .header {
+    font-size: 30px;
+  }
+}
 
 @media (prefers-color-scheme: dark) {
   html {

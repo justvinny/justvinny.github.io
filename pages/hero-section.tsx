@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "../styles/pages/hero-section.module.css";
 import { Montserrat } from "@next/font/google";
+import OutlinedButton from "../components/outlined-button";
 
 const montserrat = Montserrat({ weight: "900" });
 
 const HeroSection = () => {
   const addHeadersIncrementally = () =>
-    ["SOFTWARE ENGINEER", "ANDROID FANBOY", "BOOK LOVER", "NBA BUFF"].map(
+    ["Software Engineer", "Android Fanboy", "Book Lover", "NBA Buff"].map(
       (header, index) => {
         return (
           <span
@@ -26,6 +27,9 @@ const HeroSection = () => {
       <div className={styles.heroContainer}>
         <div className={styles.heroHeadersContainer}>
           {addHeadersIncrementally()}
+          <a href="#projects" className={styles.fadeIn}>
+            <OutlinedButton label="See My Work" />
+          </a>
         </div>
         <div className={styles.avatarContainer}>
           <img src="/images/profile-pic.jpg" className={styles.avatar} />

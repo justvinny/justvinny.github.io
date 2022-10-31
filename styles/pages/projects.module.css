@@ -1,7 +1,72 @@
 .projectsContainer {
+  width: 100%;
+  margin: 0px;
+  padding: 16px;
+  background-color: rgba(4, 22, 41, 0.9);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projectsContainer > span {
+  margin-bottom: 2.5rem;
+}
+
+.projectContainer {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.projectContainer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 1rem;
+}
+
+.projectContainer > div > span:nth-child(1) {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.projectContainer > div:has(div:empty) {
+  background-color: hsla(211, 82%, 5%, 0.95);
+}
+
+.projectContainer > div > div:not(.technologiesContainer) {
+  width: 100%;
+  height: 400px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.projectContainer > div > ul {
+  list-style: square;
+  padding-left: 3rem;
+}
+
+.technologiesContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 1rem 1rem 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .projectContainer {
+    flex-direction: column-reverse;
+  }
+
+  .projectContainer > div {
     width: 100%;
-    height: 600px;
-    margin: 0px;
-    background-color: rgba(4, 22, 41, 0.9);
-    color: white;
+  }
 }

@@ -4,6 +4,7 @@ import { mdiMenu } from "@mdi/js";
 import { useState } from "react";
 import { useMediaQuery } from "@react-hook/media-query";
 import { Montserrat } from "@next/font/google";
+import OutlinedButton from "./outlined-button";
 
 interface NavLinkInterface {
   isRow: Boolean;
@@ -35,7 +36,7 @@ const NavBar = () => {
             className={`${styles.navLinkBtn} ${montserrat.className}`}
             onClick={dismissDrawer}
           >
-            HOME
+            Home
           </button>
         </a>
       </li>
@@ -45,20 +46,25 @@ const NavBar = () => {
             className={`${styles.navLinkBtn}  ${montserrat.className}`}
             onClick={dismissDrawer}
           >
-            PROJECTS
+            Projects
           </button>
         </a>
       </li>
       <li className={addMarginLeftOrTop(isRow)}>
         <a href="#getInTouch">
-          <button
-            className={`${montserrat.className} ${
-              isRow ? styles.getInTouchBtn : styles.navLinkBtn
-            }`}
-            onClick={dismissDrawer}
-          >
-            <span>GET IN TOUCH</span>
-          </button>
+          {isRow ? (
+            <OutlinedButton
+              label="Get in Touch"
+              onClick={dismissDrawer}
+              extraBtnStyle={[styles.navLinkBtn]}
+            />
+          ) : (
+            <OutlinedButton
+              label="Get in Touch"
+              onClick={dismissDrawer}
+              btnStyle={styles.navLinkBtn}
+            />
+          )}
         </a>
       </li>
     </>
@@ -84,7 +90,7 @@ const NavBar = () => {
       <div id={styles.navBar}>
         <a href="#">
           <button className={`${styles.navBrand} ${montserrat.className}`}>
-            VINSON BEDUYA
+            Vinson Beduya
           </button>
         </a>
         <ul id={styles.navList} className="flex-row-start-center">
