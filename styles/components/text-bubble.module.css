@@ -1,0 +1,8 @@
+.textBubble {
+  background-color: rgb(117, 182, 250);
+  padding: 16px;
+  border-radius: 8px;
+  font-size: inherit;
+  margin-right: 4px;
+  margin-top: 1rem;
+}
