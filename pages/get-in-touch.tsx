@@ -20,19 +20,19 @@ const GetInTouch = () => (
     </span>
     <div className={styles.linksContainer}>
       <div className={styles.linksRow}>
-        <a href="mailto: vinsonemb_1511994@gmail.com" target="_blank">
+        <a href="mailto: vinsonemb_1511994@gmail.com" target="_blank" rel="noreferrer">
           <IconButton mdiIcon={mdiEmail} />
         </a>
-        <a href="https://www.linkedin.com/in/vinson-beduya/" target="_blank">
+        <a href="https://www.linkedin.com/in/vinson-beduya/" target="_blank" rel="noreferrer">
           <IconButton mdiIcon={mdiLinkedin} />
         </a>
       </div>
 
       <div className={styles.linksRow}>
-        <a href="https://www.instagram.com/vinson.beduya/" target="_blank">
+        <a href="https://www.instagram.com/vinson.beduya/" target="_blank" rel="noreferrer">
           <IconButton mdiIcon={mdiInstagram} />
         </a>
-        <a href="https://github.com/justvinny" target="_blank">
+        <a href="https://github.com/justvinny" target="_blank" rel="noreferrer">
           <IconButton mdiIcon={mdiGithub} />
         </a>
       </div>
