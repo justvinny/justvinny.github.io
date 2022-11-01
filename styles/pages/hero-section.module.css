@@ -65,20 +65,21 @@
 }
 
 .slideRight {
+  margin-right: 50px;
   animation-name: slideright;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
-  margin-right: 60vw;
+  transform: translateX(-70vw);
   overflow: hidden;
 }
 
 @keyframes slideright {
   from {
-    margin-right: 60vw;
+    transform: translateX(-70vw);
   }
 
   to {
-    margin-right: 50px;
+    transform: translateX(0);
   }
 }
 
@@ -136,10 +137,6 @@
     width: fit-content;
   }
 
-  .slideRight {
-    margin-right: 1500px;
-  }
-
   .fadeIn {
     margin-right: 0px;
   }
@@ -153,14 +150,8 @@
     height: 300px;
   }
 
-  @keyframes slideright {
-    from {
-      margin-right: 1500px;
-    }
-
-    to {
-      margin-right: 0px;
-    }
+  .slideRight {
+    margin-right: 0px;
   }
 }
 
