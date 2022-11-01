@@ -7,6 +7,18 @@ body {
   scroll-behavior: smooth;
 }
 
+body::-webkit-scrollbar-thumb {
+  background: rgb(117, 182, 250);
+}
+
+body::-webkit-scrollbar-track {
+  background: hsla(211, 82%, 5%, 0.95);
+}
+
+body::-webkit-scrollbar {
+  width: 1em;
+}
+
 h1 {
   padding: 0px;
   margin: 0px;

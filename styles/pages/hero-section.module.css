@@ -59,8 +59,9 @@
 
 .projectsAnchor {
   position: absolute;
-  top: 95%;
+  top: 97%;
   left: 0px;
+  color: white;
 }
 
 .slideRight {
