@@ -25,6 +25,7 @@
   margin-top: 101px;
   overflow: hidden;
   padding-bottom: 101px;
+  min-height: fit-content;
 }
 
 .heroHeadersContainer {
@@ -35,6 +36,7 @@
   align-items: flex-end;
   overflow: hidden;
   z-index: 1;
+  min-height: fit-content;
 }
 
 .heroHeader {
@@ -49,6 +51,7 @@
   flex-direction: column;
   justify-content: center;
   z-index: 1;
+  min-height: fit-content;
 }
 
 .avatar {
@@ -65,20 +68,26 @@
 }
 
 .slideRight {
+  margin-right: 50px;
   animation-name: slideright;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
-  margin-right: 60vw;
+  transform: translateX(-70vw);
+  overflow: hidden;
+}
+
+.slideRightSkeleton {
+  margin-right: 50px;
   overflow: hidden;
 }
 
 @keyframes slideright {
   from {
-    margin-right: 60vw;
+    transform: translateX(-70vw);
   }
 
   to {
-    margin-right: 50px;
+    transform: translateX(0);
   }
 }
 
@@ -128,16 +137,16 @@
 
   .avatarContainer {
     width: fit-content;
+    justify-content: flex-end;
+    min-height: 50%;
   }
 
   .heroHeadersContainer {
     align-items: center;
     margin-top: 2em;
     width: fit-content;
-  }
-
-  .slideRight {
-    margin-right: 1500px;
+    justify-content: flex-start;
+    min-height: 50%;
   }
 
   .fadeIn {
@@ -149,18 +158,12 @@
   }
 
   .avatar {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
   }
 
-  @keyframes slideright {
-    from {
-      margin-right: 1500px;
-    }
-
-    to {
-      margin-right: 0px;
-    }
+  .slideRight {
+    margin-right: 0px;
   }
 }
 
@@ -174,10 +177,6 @@
 @media (max-width: 650px) {
   .heroHeader {
     font-size: 30px;
-  }
-
-  .avatar {
-    width: 300px;
   }
 }
 

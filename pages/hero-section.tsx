@@ -24,6 +24,14 @@ const HeroSection = () => {
       }
     );
 
+  const addHeadersSkeleton = () =>
+    Array(5).map((i) => (
+      <span
+        key={`${i}temp`}
+        className={`${styles.slideRightSkeleton} ${styles.heroHeader} ${montserrat.className}`}
+      />
+    ));
+
   return (
     <>
       <div className={styles.backgroundImage} />
@@ -37,7 +45,7 @@ const HeroSection = () => {
               </a>
             </>
           ) : (
-            <></>
+            addHeadersSkeleton()
           )}
         </div>
         <div className={styles.avatarContainer}>
@@ -45,6 +53,7 @@ const HeroSection = () => {
             src="/images/profile-pic.jpg"
             alt="Photo of me."
             className={styles.avatar}
+            style={{ visibility: isAvatarLoaded ? "visible" : "hidden" }}
             width={450}
             height={450}
             onLoad={() => setAvatarLoaded(true)}
