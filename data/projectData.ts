@@ -1,8 +1,14 @@
+export enum ProjectType {
+  MOBILE,
+  WEB,
+  DESKTOP,
+  ALL,
+}
+
 export interface Project {
-  isFeatured?: Boolean;
-  isFinished?: Boolean;
-  isMobile?: Boolean;
-  featuredOngoing?: Boolean;
+  isFeatured: Boolean;
+  isFinished: Boolean;
+  projectType: ProjectType;
   title: string;
   youtubeId?: string;
   image: string;
@@ -15,9 +21,9 @@ export interface Project {
 
 const allProjects: Array<Project> = [
   {
-    isFeatured: false,
+    isFeatured: true,
     isFinished: false,
-    featuredOngoing: true,
+    projectType: ProjectType.MOBILE,
     title: "Pass Vault Rewrite (Kotlin Android)",
     image: "/images/pass-vault-kotlin-screen.png",
     imageAlt: "Pass Vault Rewrite screenshots",
@@ -45,8 +51,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: true,
     isFinished: true,
-    isMobile: true,
-    featuredOngoing: false,
+    projectType: ProjectType.MOBILE,
     title: "Patient Management System",
     image: "/images/patient-management-system.gif",
     imageAlt: "Patient Management System Animated GIF Screenshot",
@@ -66,6 +71,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: true,
     isFinished: true,
+    projectType: ProjectType.DESKTOP,
     title: "Basic 2D RPG Game",
     youtubeId: "oBZ6oHcIP7Y",
     image: "/images/rpg-project-image.JPG",
@@ -90,6 +96,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: false,
     isFinished: true,
+    projectType: ProjectType.WEB,
     title: "This Website",
     image: "/images/website-screen.JPG",
     imageAlt: "Screenshot of this portfolio website.",
@@ -116,7 +123,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: false,
     isFinished: false,
-    featuredOngoing: false,
+    projectType: ProjectType.WEB,
     title: "Gym Tracker Web App",
     image: "/images/gym-tracker-screens.PNG",
     imageAlt: "Gym tracker app screenshots",
@@ -142,6 +149,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: true,
     isFinished: true,
+    projectType: ProjectType.MOBILE,
     title: "Pass Vault (Java Android)",
     image: "/images/password-manager-screens-p1.png",
     imageAlt: "Password Manager Android Application Screenshot",
@@ -163,6 +171,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: false,
     isFinished: true,
+    projectType: ProjectType.DESKTOP,
     title: "Life Manager",
     image: "/images/life-manager-screen.PNG",
     imageAlt: "Life Manager Application Screenshot",
@@ -179,6 +188,7 @@ const allProjects: Array<Project> = [
   {
     isFeatured: false,
     isFinished: true,
+    projectType: ProjectType.DESKTOP,
     title: "Pass Volt",
     image: "/images/tk-pass-volt-screen.png",
     imageAlt: "Pass Volt Application Screenshot",
@@ -195,17 +205,16 @@ const allProjects: Array<Project> = [
   },
 ];
 
-const featuredProjects = allProjects.filter((project) => project.isFeatured);
-const ongoingProjects = allProjects.filter((project) => !project.isFinished);
-const finishedProjects = allProjects.filter((project) => project.isFinished);
-const featuredOngoingProject = allProjects.filter(
-  (project) => project.featuredOngoing
-);
+const filteredProjects = (
+  isFeatured: Boolean,
+  isCompleted: Boolean,
+  projectTypes: Array<ProjectType>
+) =>
+  allProjects.filter(
+    (project) =>
+      (!isFeatured || isFeatured === project.isFeatured) &&
+      (!isCompleted || isCompleted === project.isFinished) &&
+      (projectTypes.length === 0 || projectTypes.includes(project.projectType))
+  );
 
-export {
-  finishedProjects,
-  featuredProjects,
-  featuredOngoingProject,
-  ongoingProjects,
-  allProjects,
-};
+export { allProjects, filteredProjects };

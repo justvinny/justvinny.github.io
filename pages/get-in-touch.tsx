@@ -15,8 +15,10 @@ const montserratReg = Montserrat({ weight: "400" });
 
 const GetInTouch = () => (
   <div id="getInTouch" className={styles.getInTouchContainer}>
-    <span className={`${montserrat.className} header`}>Get In Touch</span>
-    <div className={styles.linksContainer}>
+    <span className={`${montserrat.className} header`} data-aos="zoom-out">
+      Get In Touch
+    </span>
+    <div className={styles.linksContainer} data-aos="zoom-out">
       <div className={styles.linksRow}>
         <a
           href="mailto: vinsonemb_1511994@gmail.com"
@@ -47,10 +49,10 @@ const GetInTouch = () => (
         </a>
       </div>
     </div>
-    <span className={montserratReg.className}>
+    <span className={montserratReg.className} data-aos="zoom-out">
       © Copyright Vinson Beduya 2022
     </span>
-    <a href="#" aria-label="Navigate to top of page.">
+    <a href="#" aria-label="Navigate to top of page." data-aos="zoom-out">
       <Icon path={mdiChevronUp} size={5.5} />
     </a>
   </div>
