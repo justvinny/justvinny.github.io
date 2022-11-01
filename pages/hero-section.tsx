@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import styles from "../styles/pages/hero-section.module.css";
 import { Montserrat } from "@next/font/google";
 import OutlinedButton from "../components/outlined-button";
@@ -7,6 +7,8 @@ import Image from "next/image";
 const montserrat = Montserrat({ weight: "900" });
 
 const HeroSection = () => {
+  const [isAvatarLoaded, setAvatarLoaded] = useState(false);
+
   const addHeadersIncrementally = () =>
     ["Software Engineer", "Android Fanboy", "Book Lover", "NBA Buff"].map(
       (header, index) => {
@@ -27,13 +29,26 @@ const HeroSection = () => {
       <div className={styles.backgroundImage} />
       <div className={styles.heroContainer}>
         <div className={styles.heroHeadersContainer}>
-          {addHeadersIncrementally()}
-          <a href="#projects" className={styles.fadeIn}>
-            <OutlinedButton label="See My Work" />
-          </a>
+          {isAvatarLoaded ? (
+            <>
+              {addHeadersIncrementally()}
+              <a href="#projects" className={styles.fadeIn}>
+                <OutlinedButton label="See My Work" />
+              </a>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
         <div className={styles.avatarContainer}>
-          <Image src="/images/profile-pic.jpg" alt="Photo of me." className={styles.avatar}  width={450} height={450} />
+          <Image
+            src="/images/profile-pic.jpg"
+            alt="Photo of me."
+            className={styles.avatar}
+            width={450}
+            height={450}
+            onLoad={() => setAvatarLoaded(true)}
+          />
         </div>
       </div>
       <span id="projects" className={styles.projectsAnchor} />
