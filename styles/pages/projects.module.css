@@ -54,7 +54,6 @@
   margin-bottom: 1rem;
 }
 
-.projectContainer > div:has(div:empty),
 .projectContainer > div:has(.youTube) {
   background-color: hsla(211, 82%, 5%, 0.95);
 }
