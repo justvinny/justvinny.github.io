@@ -14,6 +14,7 @@ import YouTube from "react-youtube";
 import ToggleButton from "../components/toggle-button";
 import Skeleton from "../components/skeleton";
 import Aos from "aos";
+import Carousel from "../components/carousel";
 
 const monsterrat = Montserrat({ weight: "900" });
 const monsterratReg = Montserrat({ weight: "400" });
@@ -82,7 +83,7 @@ const Projects = () => {
             iframeClassName={styles.youTube}
           />
         ) : (
-          <div style={{ backgroundImage: `url("${project.image}")` }} />
+          <Carousel items={project.images} />
         )}
       </div>
     );
