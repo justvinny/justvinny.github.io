@@ -1,7 +1,8 @@
 import styles from "../styles/components/carousel.module.css";
 import { useState } from "react";
 import Icon from "@mdi/react";
-import { mdiChevronLeft, mdiChevronRight } from "@mdi/js";
+import { mdiChevronLeft, mdiChevronRight, mdiPlay } from "@mdi/js";
+import YouTube from "react-youtube";
 
 interface ItemWithIndex {
   path: string;
@@ -9,20 +10,28 @@ interface ItemWithIndex {
 }
 
 interface Props {
-  items: Array<string>;
+  images: Array<string>;
+  youtubeIds?: Array<string>;
 }
 
 const ITEMS_PER_PAGE = 4;
 const DEFAULT_PAGE_NUM = 1;
 
-const Carousel = ({ items }: Props) => {
-  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
-  const itemsWithIndex = items.map((path, index) => {
-    return { path, index };
+const Carousel = ({ images, youtubeIds }: Props) => {
+  const totalPages = Math.ceil(images.length / ITEMS_PER_PAGE);
+  const youtubeIdsWithIndex =
+    youtubeIds?.map((path, index) => {
+      return { path, index };
+    }) ?? [];
+  const imagesWithIndex = images.map((path, index) => {
+    return { path, index: index + (youtubeIds?.length ?? 0) };
   });
+  const itemsWithIndex = [...youtubeIdsWithIndex, ...imagesWithIndex];
+
   const [carouselItems] = useState<Array<ItemWithIndex>>(itemsWithIndex);
-  const [selectedCarouselItem, setCarouselItem] =
-    useState<ItemWithIndex | null>(items.length > 0 ? carouselItems[0] : null);
+  const [selectedCarouselItem, setCarouselItem] = useState<ItemWithIndex>(
+    images.length > 0 ? carouselItems[0] : { path: "", index: 0 }
+  );
   const [carouselItemsPage, setCarouselItemsPage] = useState(DEFAULT_PAGE_NUM);
 
   const selectCarouselItem = (item: ItemWithIndex) => () => {
@@ -33,10 +42,10 @@ const Carousel = ({ items }: Props) => {
     const startIndex = carouselItemsPage * ITEMS_PER_PAGE - ITEMS_PER_PAGE;
     const endIndex =
       carouselItemsPage === totalPages
-        ? items.length
+        ? images.length + (youtubeIds?.length ?? 0)
         : carouselItemsPage * ITEMS_PER_PAGE;
 
-    if (items.length <= 0) return <></>;
+    if (itemsWithIndex.length <= 0) return <></>;
     return (
       <>
         {itemsWithIndex.slice(startIndex, endIndex).map((item) => (
@@ -46,9 +55,22 @@ const Carousel = ({ items }: Props) => {
                 ? styles.selectedCarouselItem
                 : ""
             }
-            style={{ backgroundImage: `url(${item.path})` }}
+            style={{
+              backgroundImage: `url(${
+                isSelectedItemAYouTubeId(item.index)
+                  ? `https://img.youtube.com/vi/${item.path}/default.jpg`
+                  : item.path
+              })`,
+            }}
             onClick={selectCarouselItem(item)}
-          />
+            key={item.path}
+          >
+            {isSelectedItemAYouTubeId(item.index) ? (
+              <Icon path={mdiPlay} size={1.5} color="white" />
+            ) : (
+              <></>
+            )}
+          </div>
         ))}
       </>
     );
@@ -66,13 +88,26 @@ const Carousel = ({ items }: Props) => {
     if (hasNext()) setCarouselItemsPage(carouselItemsPage + 1);
   };
 
+  const isSelectedItemAYouTubeId = (
+    index: number = selectedCarouselItem.index
+  ) => youtubeIds !== undefined && index < youtubeIds.length;
+
   return (
     <div className={styles.carousel}>
-      <div
-        style={{
-          backgroundImage: `url(${selectedCarouselItem?.path})`,
-        }}
-      />
+      {isSelectedItemAYouTubeId() ? (
+        <YouTube
+          videoId={selectedCarouselItem.path}
+          iframeClassName={styles.viewedCarouselItem}
+          className={styles.viewedCarouselItem}
+        />
+      ) : (
+        <div
+          style={{
+            backgroundImage: `url(${selectedCarouselItem.path})`,
+          }}
+          className={styles.viewedCarouselItem}
+        />
+      )}
       <div className={styles.carouselPicker}>
         <div onClick={previousPage}>
           <Icon
