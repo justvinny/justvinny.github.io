@@ -10,7 +10,6 @@ import { Montserrat } from "@next/font/google";
 import { useMediaQuery } from "@react-hook/media-query";
 import OutlinedButton from "../components/outlined-button";
 import TextBubble from "../components/text-bubble";
-import YouTube from "react-youtube";
 import ToggleButton from "../components/toggle-button";
 import Skeleton from "../components/skeleton";
 import Aos from "aos";
@@ -75,15 +74,7 @@ const Projects = () => {
     );
     const image = () => (
       <div>
-        {project.youtubeId != null ? (
-          <YouTube
-            videoId={project.youtubeId}
-            id={project.youtubeId}
-            iframeClassName={styles.youTube}
-          />
-        ) : (
-          <Carousel items={project.images} />
-        )}
+        <Carousel images={project.images} youtubeIds={project.youtubeIds} />
       </div>
     );
     return (

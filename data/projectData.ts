@@ -10,7 +10,7 @@ export interface Project {
   isFinished: Boolean;
   projectType: ProjectType;
   title: string;
-  youtubeId?: string;
+  youtubeIds?: Array<string>;
   images: Array<string>;
   imageAlt: string;
   link: string;
@@ -25,7 +25,7 @@ const allProjects: Array<Project> = [
     isFinished: false,
     projectType: ProjectType.MOBILE,
     title: "Pass Vault Rewrite (Kotlin Android)",
-    images: ["/images/pass-vault-kotlin/pass-vault-kotlin-screen.png"],
+    images: [...Array(5)].map((_, n) => `/images/pass-vault-kotlin/${n + 1}.png`),
     imageAlt: "Pass Vault Rewrite screenshots",
     link: "https://github.com/justvinny/pass-vault-kotlin-android",
     shortDescription:
@@ -53,7 +53,10 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.MOBILE,
     title: "Patient Management System",
-    images: ["/images/patient-management-system/patient-management-system.gif"],
+    images: [
+      "/images/patient-management-system/1.gif",
+      ...[...Array(15)].map((_, n) => `/images/patient-management-system/${n + 2}.jpg`),
+    ],
     imageAlt: "Patient Management System Animated GIF Screenshot",
     link: "https://github.com/justvinny/sdp-team-doctor-hu",
     shortDescription:
@@ -73,8 +76,8 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.DESKTOP,
     title: "Basic 2D RPG Game",
-    youtubeId: "oBZ6oHcIP7Y",
-    images: ["/images/rpg-game-swing/rpg-project-image.JPG"],
+    youtubeIds: ["oBZ6oHcIP7Y"],
+    images: [...Array(6)].map((_, n) => `/images/rpg-game-swing/${n + 1}.JPG`),
     imageAlt: "RPG Game Screenshot with character and golem sprite.",
     link: "https://github.com/justvinny/rpg-game-pdc",
     shortDescription:
@@ -98,7 +101,7 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.WEB,
     title: "This Website",
-    images: ["/images/this-website/website-screen.JPG"],
+    images: [...Array(3)].map((_, n) => `/images/this-website/${n + 1}.png`),
     imageAlt: "Screenshot of this portfolio website.",
     link: "https://github.com/justvinny/justvinny.github.io",
     shortDescription:
@@ -151,7 +154,7 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.MOBILE,
     title: "Pass Vault (Java Android)",
-    images: ["/images/pass-vault-java/password-manager-screens-p1.png"],
+    images: [...Array(7)].map((_, n) => `/images/pass-vault-java/${n + 1}.png`),
     imageAlt: "Password Manager Android Application Screenshot",
     link: "https://github.com/justvinny/pass-vault-java-android",
     shortDescription:
@@ -173,7 +176,7 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.DESKTOP,
     title: "Life Manager",
-    images: ["/images/life-manager/life-manager-screen.PNG"],
+    images: [...Array(5)].map((_, n) => `/images/life-manager/${n + 1}.png`),
     imageAlt: "Life Manager Application Screenshot",
     link: "https://github.com/justvinny/life-manager-app/tree/main",
     shortDescription:
@@ -190,7 +193,7 @@ const allProjects: Array<Project> = [
     isFinished: true,
     projectType: ProjectType.DESKTOP,
     title: "Pass Volt",
-    images: ["/images/pass-volt-python/tk-pass-volt-screen.png"],
+    images: [...Array(4)].map((_, n) => `/images/pass-volt-python/${n + 1}.png`),
     imageAlt: "Pass Volt Application Screenshot",
     link: "https://github.com/justvinny/tk_PassVolt",
     shortDescription:
