@@ -34,13 +34,26 @@
 }
 
 .projectContainer {
+  background-color: hsla(211, 82%, 5%, 0.95);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  max-width: 1280px;
   margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 
 .projectContainer > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.projectContainer > div > div {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,12 +62,11 @@
   padding: 1rem;
 }
 
-.projectContainer > div > span:nth-child(1) {
+.projectContainer > span:nth-child(1) {
   font-size: 24px;
-  margin-bottom: 1rem;
 }
 
-.projectContainer > div:has(.youTube) {
+.projectContainer > div > div:has(.youTube) {
   background-color: hsla(211, 82%, 5%, 0.95);
 }
 
@@ -63,7 +75,7 @@
   height: 100%;
 }
 
-.projectContainer > div > div:not(.technologiesContainer) {
+.projectContainer > div > div > div:not(.technologiesContainer) {
   width: 100%;
   height: 400px;
   background-repeat: no-repeat;
@@ -71,7 +83,7 @@
   background-size: contain;
 }
 
-.projectContainer > div > ul {
+.projectContainer > div > div > ul {
   list-style: square;
   padding-left: 3rem;
 }
@@ -87,11 +99,11 @@
 }
 
 @media only screen and (max-width: 900px) {
-  .projectContainer {
+  .projectContainer > div {
     flex-direction: column-reverse;
   }
 
-  .projectContainer > div {
+  .projectContainer > div > div {
     width: 100%;
   }
 }

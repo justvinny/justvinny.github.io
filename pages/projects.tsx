@@ -54,7 +54,6 @@ const Projects = () => {
   const renderProjectsAlternating = (project: Project, index: number) => {
     const description = () => (
       <div>
-        <span className={monsterrat.className}>{project.title}</span>
         <span>{project.shortDescription}</span>
         <div className={styles.technologiesContainer}>
           {project.technologies.map((technology) => (
@@ -151,7 +150,8 @@ const Projects = () => {
             className={styles.projectContainer}
             data-aos="zoom-out"
           >
-            {renderProjectsAlternating(project, index)}
+            <span className={monsterrat.className}>{project.title}</span>
+            <div>{renderProjectsAlternating(project, index)}</div>
           </div>
         ))
       )}
