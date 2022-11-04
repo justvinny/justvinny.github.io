@@ -3,6 +3,7 @@ import { useState } from "react";
 import Icon from "@mdi/react";
 import { mdiChevronLeft, mdiChevronRight, mdiPlay } from "@mdi/js";
 import YouTube from "react-youtube";
+import Image from "next/image";
 
 interface ItemWithIndex {
   path: string;
@@ -12,12 +13,13 @@ interface ItemWithIndex {
 interface Props {
   images: Array<string>;
   youtubeIds?: Array<string>;
+  imageAlt: string;
 }
 
 const ITEMS_PER_PAGE = 4;
 const DEFAULT_PAGE_NUM = 1;
 
-const Carousel = ({ images, youtubeIds }: Props) => {
+const Carousel = ({ images, youtubeIds, imageAlt }: Props) => {
   const totalPages = Math.ceil(images.length / ITEMS_PER_PAGE);
   const youtubeIdsWithIndex =
     youtubeIds?.map((path, index) => {
@@ -49,22 +51,21 @@ const Carousel = ({ images, youtubeIds }: Props) => {
     return (
       <>
         {itemsWithIndex.slice(startIndex, endIndex).map((item) => (
-          <div
-            className={
-              item.index === selectedCarouselItem?.index
-                ? styles.selectedCarouselItem
-                : ""
-            }
-            style={{
-              backgroundImage: `url(${
+          <div onClick={selectCarouselItem(item)} key={`carosuel-${item.path}`}>
+            <Image
+              src={
                 isSelectedItemAYouTubeId(item.index)
                   ? `https://img.youtube.com/vi/${item.path}/default.jpg`
                   : item.path
-              })`,
-            }}
-            onClick={selectCarouselItem(item)}
-            key={item.path}
-          >
+              }
+              alt={imageAlt}
+              fill={true}
+              className={
+                item.index === selectedCarouselItem?.index
+                  ? styles.selectedCarouselItem
+                  : ""
+              }
+            />
             {isSelectedItemAYouTubeId(item.index) ? (
               <Icon path={mdiPlay} size={1.5} color="white" />
             ) : (
@@ -101,10 +102,10 @@ const Carousel = ({ images, youtubeIds }: Props) => {
           className={styles.viewedCarouselItem}
         />
       ) : (
-        <div
-          style={{
-            backgroundImage: `url(${selectedCarouselItem.path})`,
-          }}
+        <Image
+          src={selectedCarouselItem.path}
+          alt={imageAlt}
+          fill={true}
           className={styles.viewedCarouselItem}
         />
       )}

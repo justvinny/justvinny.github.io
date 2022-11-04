@@ -74,7 +74,11 @@ const Projects = () => {
     );
     const image = () => (
       <div>
-        <Carousel images={project.images} youtubeIds={project.youtubeIds} />
+        <Carousel
+          images={project.images}
+          youtubeIds={project.youtubeIds}
+          imageAlt={project.imageAlt}
+        />
       </div>
     );
     return (

@@ -5,11 +5,10 @@
 }
 
 .viewedCarouselItem {
-  width: 100%;
-  height: 80%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  position: initial !important;
+  width: 100% !important;
+  height: 80% !important;
+  object-fit: contain;
 }
 
 .carouselPicker {
@@ -52,25 +51,39 @@
   height: 100%;
 }
 
-.carouselItemsContainer > * {
+.carouselItemsContainer > div {
+  position: initial !important;
   width: 25%;
   height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
   background-color: black;
-  filter: brightness(0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.carouselItemsContainer > *:hover {
+.carouselItemsContainer > div > img {
+  position: initial !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+  filter: brightness(0.3);
+}
+
+.carouselItemsContainer > div > svg {
+  position: relative;
+  bottom: 83%;
+  left: 28%;
+  filter: brightness(0.3);
+}
+
+.carouselItemsContainer > div > img:hover {
   cursor: pointer;
   filter: brightness(1);
 }
 
 .selectedCarouselItem {
+  filter: brightness(1) !important;
+  cursor: auto !important;
+}
+
+.selectedCarouselItem + svg {
   filter: brightness(1) !important;
   cursor: auto !important;
 }

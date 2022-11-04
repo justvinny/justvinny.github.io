@@ -57,7 +57,7 @@ const allProjects: Array<Project> = [
       "/images/patient-management-system/1.gif",
       ...[...Array(15)].map((_, n) => `/images/patient-management-system/${n + 2}.jpg`),
     ],
-    imageAlt: "Patient Management System Animated GIF Screenshot",
+    imageAlt: "Patient Management System Animated Screenshot",
     link: "https://github.com/justvinny/sdp-team-doctor-hu",
     shortDescription:
       "Group (4 people) project for our Software Development Practice paper. It's a Patient Management System that allows Staff and Patients to communicate realtime and gives the ability to update patients quickly on their medical results. Below are some features I was primarily responsible for.",
@@ -78,7 +78,7 @@ const allProjects: Array<Project> = [
     title: "Basic 2D RPG Game",
     youtubeIds: ["oBZ6oHcIP7Y"],
     images: [...Array(6)].map((_, n) => `/images/rpg-game-swing/${n + 1}.JPG`),
-    imageAlt: "RPG Game Screenshot with character and golem sprite.",
+    imageAlt: "In-game screenshots of this RPG game project.",
     link: "https://github.com/justvinny/rpg-game-pdc",
     shortDescription:
       "Animated 2D RPG Game made in Java and Swing by a team of 3 people for our Program Design and " +
